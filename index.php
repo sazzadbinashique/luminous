@@ -6,11 +6,12 @@
 </head>
 <body>
 	<?php
-		//include 'connect.php';
+		include 'connect.php';
 	?>
 
 	<div id="box">
-		<form method="post" enctype="multipart/form-data">		<?php
+		<form method="post" enctype="multipart/form-data">		
+		<?php
 			if (isset($_FILES['video'])) {
 				# video upload part
 
@@ -26,8 +27,8 @@
 					$message = "Oops This Video Format Not Supported !";
 				    }
 					else{
-						move_uploaded_file($tmp,'videos/'.$random_name. '.'.$type);
-						mysql_query("INSERT INTO 'videos' VALUES('', '$name', 'videos/$random_name.$type')");
+						move_uploaded_file($tmp,'videos/'.$random_name.'.'.$type);
+						mysql_query("INSERT INTO videos VALUES('', '$name', 'videos/$random_name .$type')");
 						$message = "Video Uploaded Successfully";
 					}
 
@@ -37,11 +38,11 @@
 		 	Select Video : <br/>
 		 	<input type="file" name="video"/>
 		 	<br/><br/>
-		 	<input type="type" name="Upload"/>
+		 	<input type="submit" name="Upload"/>
 		 </form>	
 	</div>
 
-	<div id="box">
+	<div id="box"> 
 		<?php
 			$query = mysql_query("SELECT 'id', 'name', 'url' FROM videos");
 			while ($run = mysql_fetch_array($query)) {
@@ -49,12 +50,17 @@
 				$video_id = $run['id'];
 				$video_name = $run['name'];
 				$video_url = $run['url'];
-			}
+			
 		?>
 			<a href="view.php?video=<?php echo $video_url; ?>">
 			<div id="url">
-				<?php 
-			</div></a>
+				<?php echo $video_name; ?>
+			</div>
+			</a>
+
+		<?php	
+			}
+		?>	
 		
 	</div>
 
