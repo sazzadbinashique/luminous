@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Luminous Community</title>
+	<title>Luminous Logic</title>
 	<link rel="stylesheet" href="style.css">
     <link href="http://vjs.zencdn.net/5.8.0/video-js.css" rel="stylesheet">
      <!-- If you'd like to support IE8 -->
