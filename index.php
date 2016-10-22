@@ -1,68 +1,72 @@
+<?php
+include_once 'dbconnect.php';
+
+// fetch files
+$sql = "select filename from tbl_files";
+$result = mysqli_query($con, $sql);
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Luminous Community</title>
-	<link rel="stylesheet" href="style.css">
+    <title>Upload View & Download file in PHP and MySQL | Demo</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" >
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
 </head>
 <body>
-	<?php
-		include 'connect.php';
-	?>
-
-	<div id="box">
-		<form method="post" enctype="multipart/form-data">		
-		<?php
-			if (isset($_FILES['video'])) {
-				# video upload part
-
-				$name = $_FILES['video']['name'];
-				$type = explode('.', $name);
-				$type = end($type);
-				$size = $_FILES['video']['size'];
-				$random_name = rand();
-				$tmp = $_FILES['video']['tmp_name'];
-
-				if ($type != 'mp4' && $type != 'MP4' && $type != 'flv' ) {
-					# condition video upload
-					$message = "Oops This Video Format Not Supported !";
-				    }
-					else{
-						move_uploaded_file($tmp,'videos/'.$random_name.'.'.$type);
-						mysql_query("INSERT INTO videos VALUES('', '$name', 'videos/$random_name .$type')");
-						$message = "Video Uploaded Successfully";
-					}
-
-					echo"$message <br/><br/>";
-			}	
-		?>
-		 	Select Video : <br/>
-		 	<input type="file" name="video"/>
-		 	<br/><br/>
-		 	<input type="submit" name="Upload"/>
-		 </form>	
-	</div>
-
-	<div id="box"> 
-		<?php
-			$query = mysql_query("SELECT 'id', 'name', 'url' FROM videos");
-			while ($run = mysql_fetch_array($query)) {
-				# vidos list
-				$video_id = $run['id'];
-				$video_name = $run['name'];
-				$video_url = $run['url'];
-			
-		?>
-			<a href="view.php?video=<?php echo $video_url; ?>">
-			<div id="url">
-				<?php echo $video_name; ?>
-			</div>
-			</a>
-
-		<?php	
-			}
-		?>	
-		
-	</div>
-
+<br/>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-8 col-xs-offset-2 well">
+        <form action="uploads.php" method="post" enctype="multipart/form-data">
+            <legend>Select File to Upload:</legend>
+            <div class="form-group">
+                <input type="file" name="file1" />
+            </div>
+            <div class="form-group">
+                <input type="submit" name="submit" value="Upload" class="btn btn-info"/>
+            </div>
+            <?php if(isset($_GET['st'])) { ?>
+                <div class="alert alert-danger text-center">
+                <?php if ($_GET['st'] == 'success') {
+                        echo "File Uploaded Successfully!";
+                    }
+                    else
+                    {
+                        echo 'Invalid File Extension!';
+                    } ?>
+                </div>
+            <?php } ?>
+        </form>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>File Name</th>
+                        <th>View</th>
+                        <th>Download</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <?php
+                $i = 1;
+                while($row = mysqli_fetch_array($result)) { ?>
+                <tr>
+                    <td><?php echo $i++; ?></td>
+                    <td><?php echo $row['filename']; ?></td>
+                    <td><a href="uploads/<?php echo $row['filename']; ?>" target="_blank">View</a></td>
+                    <td><a href="uploads/<?php echo $row['filename']; ?>" download>Download</td>
+                </tr>
+                <?php } ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 </body>
 </html>
