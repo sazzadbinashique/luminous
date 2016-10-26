@@ -1,154 +1,101 @@
-body {
-  padding-top: 20px;
-}
 
-.footer {
-  padding-top: 40px;
-  padding-bottom: 40px;
-  margin-top: 40px;
-  border-top: 1px solid #eee;
-}
+ .logo{
+ 	float: left;
+ }
 
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  background-color: transparent;
+ .logo h1 a img{
+          height: 100px;
+          width: 140px;
+ }
+header{
+	background-color: white;
 }
-.jumbotron .btn {
-  padding: 14px 24px;
-  font-size: 21px;
-}
+.logo p{
+	line-height: 0.5em;
+	color: #345f2f;
 
-/* Customize the nav-justified links to be fill the entire space of the .navbar */
-
-.nav-justified {
-  background-color: #eee;
-  border: 1px solid #ccc;
-  border-radius: 5px;
 }
-.nav-justified > li > a {
-  padding-top: 15px;
-  padding-bottom: 15px;
-  margin-bottom: 0;
-  font-weight: bold;
-  color: #777;
-  text-align: center;
-  background-color: #e5e5e5; /* Old browsers */
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#f5f5f5), to(#e5e5e5));
-  background-image: -webkit-linear-gradient(top, #f5f5f5 0%, #e5e5e5 100%);
-  background-image:      -o-linear-gradient(top, #f5f5f5 0%, #e5e5e5 100%);
-  background-image:         linear-gradient(to bottom, #f5f5f5 0%,#e5e5e5 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f5f5', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
-  background-repeat: repeat-x; /* Repeat the gradient */
-  border-bottom: 1px solid #d5d5d5;
+.title{
+	float: left;
+	font-family: ubuntu;
+	font-size: 17px;
+    color: #345f2f;
+    line-height: 0.5em;
+    /*padding-left: 60px;*/
 }
-.nav-justified > .active > a,
-.nav-justified > .active > a:hover,
-.nav-justified > .active > a:focus {
-  background-color: #ddd;
-  background-image: none;
-  -webkit-box-shadow: inset 0 3px 7px rgba(0,0,0,.15);
-          box-shadow: inset 0 3px 7px rgba(0,0,0,.15);
+.title h1{
+	padding-left: 74px;
 }
-.nav-justified > li:first-child > a {
-  border-radius: 5px 5px 0 0;
+.title p{
+	padding-left: 74px;
 }
-.nav-justified > li:last-child > a {
-  border-bottom: 0;
-  border-radius: 0 0 5px 5px;
+nav{
+	padding-left: 11px;
 }
-
-@media (min-width: 768px) {
-  .nav-justified {
-    max-height: 52px;
-  }
-  .nav-justified > li > a {
-    border-right: 1px solid #d5d5d5;
-    border-left: 1px solid #fff;
-  }
-  .nav-justified > li:first-child > a {
-    border-left: 0;
-    border-radius: 5px 0 0 5px;
-  }
-  .nav-justified > li:last-child > a {
-    border-right: 0;
-    border-radius: 0 5px 5px 0;
-  }
+.header-nav ul li{
+	padding-left: 25px;
+    margin-left: 2px;
+    display: inline;
+    padding-top: 50px;
+    float: left;
 }
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  /* Remove the padding we set earlier */
-  .masthead,
-  .marketing,
-  .footer {
-    padding-right: 0;
-    padding-left: 0;
-  }
-}
-.my_header_top {
-    height: 100px;
-}
-
-
-/* Carousel base class */
-.carousel {
-  height: 500px;
-  margin-bottom: 60px;
-}
-/* Since positioning the image, we need to help out the caption */
-.carousel-caption {
-  z-index: 10;
-}
-
-/* Declare heights because of positioning of img element */
-.carousel .item {
-  height: 500px;
-  background-color: #777;
-}
-.carousel-inner > .item > img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  height: 500px;
-}
-
-.social-links a {
-    /*border: 5px solid #ED5;*/
-    /*border-radius: 4px;*/
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    text-align: center;
-    line-height: 36px;
-}
-.social-links  p {
-    margin: auto;
-    padding: 0px;
-}
-
-.fa{
-      font-size: 56px; 
-}
-
-.left-menu{
-  margin: auto;
-  padding: 15px;
-  border: 1px solid ;
-}
-.left-menu a img {
-      margin: 14px;
-    padding: 14px;
-    border-radius: 2px;
+.header-nav ul li a{
+	text-decoration: none;
+    color: black;
+    font-family: ubuntu;
+    font-size: 25px;
+    /*border: 10px;*/
     
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: 400;
 }
-.right-side{
-  margin: auto;
-  padding: 15px;
-  border: 1px solid ;
+.header-nav ul li a:hover{
+	color: #345f2f;
+	background-color: grey;
+	padding: 5px;
 }
 
-.nav-justified>li {
-    width: 0px;
-  }
+.social{
+	float: right;
+    margin: 5px;
+    padding: 5px;
+    padding-top: 25px;
+    font-size: 15px;
+    color: #345f2f;
+
+}
+.social p{
+	line-height: .5em;
+	margin: 10px;
+	font-size: 19px
+}
+.social ul {
+	margin: 5px;
+	padding: 5px;
+	border: 5px;
+}
+.social ul li{
+	margin: -1px 10px 5px 0;
+	padding: 5px;
+	padding-top: 10px;
+	height: 28px;
+    width: 28px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.3);
+    -moz-border-radius: 100%;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    -webkit-border-radius: 100%;
+    -webkit-transition: all .3s ease;
+    border: 1px solid #fff;
+    border: 5px;
+    border-radius: 4px;
+}
+.social ul li a:hover{
+	color: #fff;
+	background-color: grey;
+}
+.social ul li a{
+	display: block;
+}
