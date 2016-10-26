@@ -1,24 +1,39 @@
 
+body{
+	background-color: #d6d6d6;
+}
+ 
  .logo{
  	float: left;
  }
 
  .logo h1 a img{
-          height: 100px;
-          width: 140px;
+          /*height: 100px;
+          width: 140px;*/
+     /*width: 100%;*/
+    max-width: 170px;
+    margin-top: 1px;
+    border: 1px solid #d6d6d6;
+    height: 98px;
  }
 header{
-	background-color: white;
+	background-color: #fbfbfb;
+	min-height: 95px;
 }
 .logo p{
 	line-height: 0.5em;
 	color: #345f2f;
+	font-size: 12px;
+
+}
+.logo h4{
+	font-size: 15px;
 
 }
 .title{
 	float: left;
 	font-family: ubuntu;
-	font-size: 17px;
+	font-size: 15px;
     color: #345f2f;
     line-height: 0.5em;
     /*padding-left: 60px;*/
@@ -36,14 +51,14 @@ nav{
 	padding-left: 25px;
     margin-left: 2px;
     display: inline;
-    padding-top: 50px;
+    padding-top: 40px;
     float: left;
 }
 .header-nav ul li a{
 	text-decoration: none;
     color: black;
     font-family: ubuntu;
-    font-size: 25px;
+    font-size: 20px;
     /*border: 10px;*/
     
     border-radius: 5px;
@@ -98,4 +113,63 @@ nav{
 }
 .social ul li a{
 	display: block;
+}
+
+.col-md-2, .col-md-7, .col-md-3 {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+aside{
+	display: block;
+}
+.mini-logo {
+    margin-bottom: -8px;
+}
+
+div.mini-logo img {
+    width: 100%;
+    max-width: 283px;
+    margin-top: 1px;
+    border: 1px solid #d6d6d6;
+    height: 194px;
+}
+img {
+    vertical-align: middle; 
+    max-width: 100%;
+    border: 0;
+}
+.left-menu {
+    margin-top: 10px 0!important;
+    padding: 0;
+}
+
+ul.nav-list.primary>li {
+    margin: 0;
+    padding: 0;
+}
+ul.left-menu li {
+    line-height: 14px;
+}
+
+li.heading {
+    margin: 0;
+    background: #316441;
+    font-size: 100%;
+    border: 1px solid #797777;
+    padding: 15px 0 15px 15px!important;
+    margin-top: 20px;
+    color: #fff;
+    background: #5b4282 url("../img/pattern.png") repeat center center !important;
+}
+@media (min-width: 992px)
+.col-md-2 {
+    width: 22.66666667%;
+}
+
+	.middle-col {
+    border: 1px solid #d6d6d6;
+     background: #fff; 
+    padding-left: 10px;
+    padding-right: 10px;
 }
