@@ -1,6 +1,6 @@
 
 body{
-	background-color: #d6d6d6;
+	background-color: #ffffff;
 }
  
  .logo{
@@ -162,14 +162,124 @@ li.heading {
     color: #fff;
     background: #5b4282 url("../img/pattern.png") repeat center center !important;
 }
-@media (min-width: 992px)
+/*@media (min-width: 992px)
 .col-md-2 {
     width: 22.66666667%;
-}
+}*/
 
-	.middle-col {
+.middle-col {
     border: 1px solid #d6d6d6;
-     background: #fff; 
+     background: #c5c5c5; 
     padding-left: 10px;
     padding-right: 10px;
+}
+
+/* card system css */
+.js-trick-container{
+    position: relative;
+    height: 753px;
+}
+.trick-card {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.content-box, .trick-card-inner {
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+    box-shadow: 0 1px 2px rgba(0,0,0,.15);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background-color: #fff;
+}
+*, :after, :before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+     box-sizing: border-box; 
+}
+.trick-card-title {
+    display: block;
+    font-weight: 700;
+    color: #33383A;
+    font-size: 20px;
+    padding: 20px;
+}
+a {
+    color: #f47063;
+    text-decoration: none;
+}
+*, :after, :before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    /* box-sizing: border-box; */
+}
+.trick-card-by {
+    border: none;
+    padding-top: 0;
+}
+.trick-card-stats {
+    color: #777;
+}
+.trick-card-stats, .trick-card-tags {
+    width: 100%;
+    border-top: #eee 1px solid;
+    padding: 10px 20px;
+    font-size: 13px;
+}
+.clearfix:after, .clearfix:before {
+    content: " ";
+    display: table;
+}
+.trick-card-stat-block {
+    height: 20px;
+    line-height: 20px;
+    float: left;
+    width: 33.333%;
+}
+.tag {
+    float: left;
+    display: block;
+    border: 1px solid #FB503B;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    color: #FB503B;
+    font-weight: 700;
+    padding: 1px 5px;
+}
+.tag:hover {
+    text-decoration: none;
+    border-color: none;
+    color: #fff;
+    background-color: #FB503B;
+}
+a:focus, a:hover {
+    color: #ef2e1c;
+    text-decoration: underline;
+}
+a:active, a:hover {
+    outline: 0;
+}
+
+/* footer section */
+#footer {
+    height: 60px;
+    background-color: #fff;
+    -webkit-box-shadow: 0 -1px 2px rgba(0,0,0,.1);
+    -moz-box-shadow: 0 -1px 2px rgba(0,0,0,.1);
+    box-shadow: 0 -1px 2px rgba(0,0,0,.1);
+}
+#footer>.container {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.container .credit {
+    margin: 20px 0;
+}
+
+.text-muted {
+    color: #999;
 }
