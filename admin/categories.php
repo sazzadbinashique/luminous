@@ -61,44 +61,18 @@
 
 
 
-                                <form action="" method="post">
-                                    <div class="form-group">
-                                        <label for= "cat-title">Edit Category</label>
+                                <?php 
 
-                                        <?php 
-                                        if (isset($_GET['edit'])) {
-                                            $cat_id = $_GET['edit'];
+                                if (isset($_GET['edit'])) {
+                                 
+                                 $cat_id = $_GET['edit'];
 
-                                            $query = "SELECT * FROM  category WHERE cat_id = {$cat_id}";
-                                            $select_categories = mysqli_query($connection, $query);
+                                 include "includes/update_categories.php";
 
-                                            while ($row = mysqli_fetch_assoc($select_categories)) {
-
-                                            $cat_id = $row['cat_id'];
-                                            $cat_title = $row['cat_title'];}
-
-                                            ?>
-<input value="<?php if (isset($cat_title)) {echo $cat_title;} ?>" type="text" name="cat_title" class="form-control">
+                                }
 
 
-                                    <?php } ?>
-
-
-
-
-
-
-                                        
-                                    </div>    
-                                    <div class="form-group">
-                                    <input type="submit" name="submit" value="Update Category" class="btn btn-primary">
-                                    </div>
-                                </form>
-
-
-
-
-
+                                 ?>
 
 
 
@@ -143,19 +117,14 @@
                                          $the_cat_id = $_GET['delete'];
                                          $query = "DELETE FROM category WHERE cat_id = {$the_cat_id} ";
 
-                                            // if(mysqli_query($connection, $query)){ 
-                                            // echo "Record was deleted successfully."; 
-                                            // }  
-                                            // else{ 
-                                            // echo "ERROR: Could not able to execute $sql. "  
-                                            // . mysqli_error($connection); 
-                                            // }                                          
+                                           
 
                                         $delete_query = mysqli_query($connection, $query);
 
                                          if (!$delete_query) {
                                                 die('QUERY FAILED' . mysqli_error($connection));
-                                            }
+                                            } 
+
 
                                          header("Location: categories.php");
                                      }
