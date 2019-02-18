@@ -1,4 +1,25 @@
+
+<?php ob_start() ?>
 <?php include "../includes/db.php"; ?>
+
+
+ <?php 
+ session_start()
+ ?>
+
+
+
+
+<?php 
+// if (isset($_SESSION['user_role'])) {
+    
+// }else {
+
+//     header("location: ../index.php");
+// } 
+
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +32,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin - Bootstrap Admin Template</title>
+    <title>CMS Admin </title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
