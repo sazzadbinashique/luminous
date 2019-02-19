@@ -33,8 +33,8 @@
           include "includes/add_post.php";
           break;
 
-      case '34':
-              echo "Bad";
+      case 'edit_post':
+           include "includes/edit_post.php";   
               break;    
       
       default:
