@@ -29,7 +29,7 @@
    	if (isset($_POST['update_post'])) {
    	 
 
-	$post_category_id= $_POST['post_category_id'];
+	$post_category_id= $_POST['post_category'];
 	$post_title= $_POST['post_title'];
 	$post_author= $_POST['post_author'];
 
@@ -85,7 +85,7 @@
 	</div>	
 	<div class="form-group">
 		<!-- <label for="">Post Category </label> -->
-		<select name="post_category_id" id="">
+		<select name="post_category" id="">
 			<?php 
 
 			$query = "SELECT * FROM  category ";
@@ -96,6 +96,7 @@
             while ($row = mysqli_fetch_assoc($select_categories)) {
             $cat_id = $row['cat_id'];
             $cat_title = $row['cat_title'];
+            // print_r($cat_title);
 
             echo "<option value='$cat_id'>{$cat_title}</option>";
        		 }

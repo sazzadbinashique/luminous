@@ -59,7 +59,7 @@
 
 
    echo "<td>$post_content</td>";
-   echo "<td><img src='../images/{$post_image}' alt='Image' class ='img-responsive'></td>";
+   echo "<td><img src='../images/{$post_image}' alt='Image' width =100 ></td>";
    echo "<td>$post_tags</td>";
    echo "<td>$post_comment_count</td>";
    echo "<td>$post_status</td>";

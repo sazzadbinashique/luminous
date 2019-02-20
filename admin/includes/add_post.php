@@ -2,7 +2,7 @@
 
 if (isset($_POST['create_post'])) {
 
-	$post_category_id= $_POST['post_category_id'];
+	$post_category_id= $_POST['post_category'];
 	$post_title= $_POST['post_title'];
 	$post_author= $_POST['post_author'];
 
@@ -54,7 +54,7 @@ if (isset($_POST['create_post'])) {
 	</div>	
 		<div class="form-group">
 		<!-- <label for="">Post Category </label> -->
-		<select name="post_category_id" id="">
+		<select name="post_category" id="" >
 			<?php 
 
 			$query = "SELECT * FROM  category ";

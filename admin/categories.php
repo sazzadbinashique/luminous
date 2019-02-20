@@ -25,10 +25,10 @@
                                 <form action="" method="post">
                                     <div class="form-group">
                                         <label for= "cat-title">Add Category</label>
-                                        <input type="text" name="cat_title" class="form-control">
+                                        <input type="text" name="cat_title" class="form-control" autofocus>
                                     </div>    
                                     <div class="form-group">
-                                    <input type="submit" name="submit" value="Add Category" class="btn btn-primary">
+                                    <input type="submit" name="submit" value="Add Category" class="btn btn-primary" >
                                     </div>
                                 </form>
 
@@ -53,6 +53,8 @@
                                         <tr>
                                             <th>Id </th>
                                             <th>Category Title</th>
+                                            <th>Edit Item</th>
+                                            <th>Delete Item</th>
                                         </tr>
                                     </thead>
                                     <tbody>
