@@ -43,7 +43,21 @@
    echo "<td>$post_id</td>";
    echo "<td>$post_author</td>";
    echo "<td>$post_title</td>";
-   echo "<td>$post_comment_count</td>";
+
+    $query = "SELECT * FROM  category WHERE cat_id = {$post_category_id}";
+    $select_categories_id = mysqli_query($connection, $query);
+
+    while ($row = mysqli_fetch_assoc($select_categories_id)) {
+
+    $cat_id = $row['cat_id'];
+    $cat_title = $row['cat_title'];
+
+
+  }
+   echo "<td>$cat_title</td>";
+
+
+
    echo "<td>$post_content</td>";
    echo "<td><img src='../images/{$post_image}' alt='Image' class ='img-responsive'></td>";
    echo "<td>$post_tags</td>";
@@ -65,22 +79,22 @@
 
 
 
-                        <?php   
+<?php   
 
-                        if (isset($_GET['delete'])) {
-                          
-                          $the_post_id = $_GET['delete'];
-
-
-                          $query = "DELETE FROM posts WHERE post_id = {$the_post_id} ";
-                          $post_delete_query = mysqli_query($connection, $query);
-
-                          confirm($post_delete_query);
-
-                          header("Location: post.php");
-                        }
+if (isset($_GET['delete'])) {
+  
+  $the_post_id = $_GET['delete'];
 
 
+  $query = "DELETE FROM posts WHERE post_id = {$the_post_id} ";
+  $post_delete_query = mysqli_query($connection, $query);
+
+  confirm($post_delete_query);
+
+  header("Location: post.php");
+}
 
 
-                         ?>
+
+
+ ?>

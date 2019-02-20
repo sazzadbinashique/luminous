@@ -7,7 +7,7 @@
 	}
 
 
-    $query = "SELECT * FROM  posts";
+    $query = "SELECT * FROM  posts WHERE post_id= $the_post_id ";
     $select_post = mysqli_query($connection, $query);
 
     while ($row = mysqli_fetch_assoc($select_post)) {
@@ -26,14 +26,55 @@
 }
 
 
+   	if (isset($_POST['update_post'])) {
+   	 
+
+	$post_category_id= $_POST['post_category_id'];
+	$post_title= $_POST['post_title'];
+	$post_author= $_POST['post_author'];
+
+
+	$post_image= $_FILES['post_image']['name'];
+	$post_image_temp= $_FILES['post_image']['tmp_name'];
+
+	$post_tags= $_POST['post_tags'];
+	$post_content= $_POST['post_content'];
+	$post_status= $_POST['post_status'];
+
+
+
+	move_uploaded_file($post_image_temp, "../images/$post_image");
+
+
+	if (empty($post_image)) {
+		$query = "SELECT * FROM posts WHERE post_id = $the_post_id ";
+		$slect_query_image = mysqli_query($connection, $query); 
+
+		while ($row = mysqli_fetch_array($slect_query_image)) {
+			$post_image = $row['post_image'];
+		}
+	}
+
+
+
+	$query = "UPDATE posts SET ";
+	$query.="post_title = '{$post_title}',";
+	$query.="post_category_id = '{$post_category_id}',";
+	$query.="post_date = now(),";
+	$query.="post_author = '{$post_author}',";
+	$query.="post_status = '{$post_status}',";
+	$query.="post_content = '{$post_content}',";
+	$query.="post_image = '{$post_image}'";
+	$query.="WHERE post_id = '{$the_post_id}'";
+
+
+	$update_query = mysqli_query($connection, $query);
+
+	confirm($update_query);
+
+   	}
 
  ?>
-
-
-
-
-
-
 
 
 <form action="" method="post" enctype="multipart/form-data">
@@ -44,7 +85,7 @@
 	</div>	
 	<div class="form-group">
 		<!-- <label for="">Post Category </label> -->
-		<select name="" id="">
+		<select name="post_category_id" id="">
 			<?php 
 
 			$query = "SELECT * FROM  category ";
@@ -53,14 +94,10 @@
             confirm($select_categories);
 
             while ($row = mysqli_fetch_assoc($select_categories)) {
-
             $cat_id = $row['cat_id'];
             $cat_title = $row['cat_title'];
 
-
-
-
-            echo "<option value=''>{$cat_title}</option>";
+            echo "<option value='$cat_id'>{$cat_title}</option>";
        		 }
 
 			 ?>
@@ -79,6 +116,7 @@
 	<div class="form-group">
 		<!-- <label for="">Post Image</label> -->
 		<img width = "100" src="../images/<?php echo $post_image ?>" alt="Image">
+		<input type="file" name="post_image" class="form-control">
 	</div>
 	
 
@@ -95,7 +133,7 @@
 		<input value="<?php echo $post_date; ?>" type="date" class="form-control" name="post_date">
 	</div>	
 	<div class="form-group">
-		<input type="submit" class="btn btn-primary" type="submit" name="create_post" value="Publish Post">
+		<input type="submit" class="btn btn-primary" type="submit" name="update_post" value="Update Post">
 	</div>	
 
 </form>
