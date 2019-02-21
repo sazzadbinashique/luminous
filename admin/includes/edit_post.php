@@ -9,7 +9,6 @@
 
     $query = "SELECT * FROM  posts WHERE post_id= $the_post_id ";
     $select_post = mysqli_query($connection, $query);
-    print_r($select_post);
     while ($row = mysqli_fetch_assoc($select_post)) {
 
     $post_id = $row['post_id'];
@@ -96,9 +95,8 @@
             while ($row = mysqli_fetch_assoc($select_categories)) {
             $cat_id = $row['cat_id'];
             $cat_title = $row['cat_title'];
-            // print_r($cat_title);
 
-            echo "<option value='$cat_id'>{$cat_title}</option>";
+            echo "<option value='$cat_id'>$cat_title</option>";
        		 }
 
 			 ?>
@@ -127,7 +125,7 @@
 	</div>	
 	<div class="form-group">
 		<label for="">Post Content</label>
-		<textarea class="form-control" name="post_content" id="" cols="30" rows="10"> <?php echo $post_title; ?></textarea>
+		<textarea class="form-control" name="post_content" id="" cols="30" rows="10"><?php echo $post_content; ?></textarea>
 	</div>	
 	<div class="form-group">
 		<label for="">Post Date</label>
