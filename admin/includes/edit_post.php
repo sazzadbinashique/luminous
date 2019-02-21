@@ -9,7 +9,7 @@
 
     $query = "SELECT * FROM  posts WHERE post_id= $the_post_id ";
     $select_post = mysqli_query($connection, $query);
-
+    print_r($select_post);
     while ($row = mysqli_fetch_assoc($select_post)) {
 
     $post_id = $row['post_id'];
