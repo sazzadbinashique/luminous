@@ -58,11 +58,11 @@
    echo "<td>$comment_email</td>";
    echo "<td>$comment_status</td>";
    echo "<td>$comment_date</td>";
-   echo "<td>$comment_status</td>";
-   echo "<td><a href='post.php?source=edit_post&p_id={$post_id}'>Approved</a></td>";
-   echo "<td><a href='post.php?delete={$post_id}'>Unapproved</a></td>";
-   echo "<td><a href='post.php?source=edit_post&p_id={$post_id}'>Edit</a></td>";
-   echo "<td><a href='post.php?delete={$post_id}'>Delete</a></td>";
+   echo "<td>some title</td>";
+   echo "<td><a href='post.php?source=edit_post&p_id='>Approved</a></td>";
+   echo "<td><a href='post.php?delete='>Unapproved</a></td>";
+   echo "<td><a href='post.php?source=edit_post&p_id='>Edit</a></td>";
+   echo "<td><a href='post.php?delete='>Delete</a></td>";
    echo "</tr>";
 }
 
