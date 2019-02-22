@@ -11,6 +11,7 @@
                                     <th>In Response to</th>
                                     <th>Approved</th>
                                     <th>Unapproved</th>
+                                    <th>Delete</th>
                                 </tr>
                             </thead>
 
@@ -58,7 +59,27 @@
    echo "<td>$comment_email</td>";
    echo "<td>$comment_status</td>";
    echo "<td>$comment_date</td>";
-   echo "<td>some title</td>";
+
+   $query = "SELECT * FROM posts WHERE post_id = {$comment_post_id} "; 
+   $select_guery = mysqli_query($connection, $query);
+
+   while ($row = mysqli_fetch_assoc($select_guery)) {
+   	 $post_id = $row['post_id'];
+   	 $post_title =$row['post_title'];
+
+
+
+   }
+   echo "<td> <a href='../post.php?p_id=$post_id'> $post_title</a></td>";
+
+
+
+
+
+
+
+
+
    echo "<td><a href='post.php?source=edit_post&p_id='>Approved</a></td>";
    echo "<td><a href='post.php?delete='>Unapproved</a></td>";
    echo "<td><a href='post.php?source=edit_post&p_id='>Edit</a></td>";
