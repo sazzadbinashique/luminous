@@ -70,6 +70,7 @@
 	$update_query = mysqli_query($connection, $query);
 
 	confirm($update_query);
+	header("Location: post.php");
 
    	}
 

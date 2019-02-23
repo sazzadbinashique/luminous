@@ -17,7 +17,7 @@
             <div class="col-md-8">
 
  <?php 
-    $query = "SELECT * FROM  posts";
+    $query = "SELECT * FROM  posts ";
     $select_all_post_query = mysqli_query($connection, $query);
 
     // print_r($select_all_post_query);
@@ -30,7 +30,17 @@
         $post_date = $row['post_date'];
         $post_image = $row['post_image'];
         $post_content = substr($row['post_content'], 0,200);
+        $post_status = $row['post_status'];
 
+
+
+
+        if ($post_status !== "published") {
+            echo "<h1 class ='text-center'>Oppos! Does not post yet</h1>";
+        } else{
+
+
+       
 ?>
 
 
@@ -59,7 +69,7 @@
 
 
 
-   <?php } ?>
+   <?php } } ?>
 
 
             </div>
