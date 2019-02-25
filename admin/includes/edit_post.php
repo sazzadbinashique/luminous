@@ -70,7 +70,7 @@
 	$update_query = mysqli_query($connection, $query);
 
 	confirm($update_query);
-	header("Location: post.php");
+	echo "<h4 class ='alert alert-success' >Post Created Succesfully <a href ='../post.php?p_id={$the_post_id}' >View post</a>OR<a href='post.php'>View More post</a></h4>";
 
    	}
 
@@ -110,10 +110,33 @@
 		<label for="">Post Author</label>
 		<input value="<?php echo $post_author; ?>" type="text" class="form-control" name="post_author">
 	</div>	
+
 	<div class="form-group">
-		<label for="">Post Status</label>
-		<input value="<?php echo $post_status; ?>" type="text"  class="form-control" name="post_status">
-	</div>	
+	<select name="post_status" id="">
+
+		<option value='<?php echo $post_status; ?>'><?php echo $post_status; ?></option>
+
+		<?php 
+		if ($post_status == 'published') {
+
+			echo "<option value='draft'>Draft</option>";
+		}else{
+
+			echo "<option value='published'>Publish</option>";
+		}
+
+		 ?>
+	
+
+	</select>
+	</div>
+
+
+
+
+
+
+
 	<div class="form-group">
 		<!-- <label for="">Post Image</label> -->
 		<img width = "100" src="../images/<?php echo $post_image ?>" alt="Image">
