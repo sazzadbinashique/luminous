@@ -75,11 +75,11 @@ if (isset($_POST['create_post'])) {
 
 	<div class="form-group">
 		<label for="">Post Author</label>
-		<input type="text" class="form-control" name="post_author">
+		<input type="text" class="form-control" name="post_author" >
 	</div>	
 	<div class="form-group">
 		<label for="">Post Status</label>
-		<input type="text" class="form-control" name="post_status">
+		<input type="text" class="form-control" name="post_status" placeholder="example: published">
 	</div>	
 	<div class="form-group">
 		<label for="">Post Image</label>

@@ -112,7 +112,7 @@
 	</div>	
 	<div class="form-group">
 		<label for="">Post Status</label>
-		<input value="<?php echo $post_status; ?>" type="text" class="form-control" name="post_status">
+		<input value="<?php echo $post_status; ?>" type="text"  class="form-control" name="post_status">
 	</div>	
 	<div class="form-group">
 		<!-- <label for="">Post Image</label> -->
