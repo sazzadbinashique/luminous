@@ -23,6 +23,8 @@ if (isset($_POST['create_user'])) {
 
 	// move_uploaded_file($post_image_temp, "../images/$post_image");
 
+	
+
 
 
 
@@ -34,6 +36,8 @@ if (isset($_POST['create_user'])) {
 
 
 	confirm($create_user_query);
+
+	echo "<h4 class ='alert alert-success float-right' >User Created Succesfully:" . " " . "<a href = 'users.php' > View Users</a></h4>";
 
 
 }

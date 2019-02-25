@@ -34,6 +34,7 @@ function insert_categories(){
                         if (!$create_categories) {
                             die('QUERY FAILED' . mysqli_error($connection));
                         }
+                         echo "<h4 class ='alert alert-success float-right' >Add categories Create Succesfully:" . " " . "<a href = 'categories.php' > View Categories</a></h4>";
                     }   
 
                 }                       

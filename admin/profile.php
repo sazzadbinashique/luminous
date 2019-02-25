@@ -78,7 +78,7 @@
   $edit_query = mysqli_query($connection, $query);
 
   confirm($edit_query);
-  header("Location: users.php");
+  
 
     }
 
@@ -88,11 +88,15 @@
 
     <div id="wrapper">
 
+
+
         <!-- Navigation -->
 
 <?php include "includes/navigation.php"; ?>
 
         <div id="page-wrapper">
+
+
 
             <div class="container-fluid">
                 <!-- Page Heading -->
@@ -102,6 +106,7 @@
                         <h1 class="page-header">
                            Welcome to Admin
                             <small>Author</small>
+                        
                         </h1>
 
 

@@ -63,7 +63,7 @@
                 <img class="img-responsive" src="images/<?php echo $post_image ?> " alt="">
                 <hr>
                 <p><?php echo $post_content?></p>
-                <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+               <!--  <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a> -->
 
                 <hr>
 
@@ -94,7 +94,7 @@
 
                     $create_comment_query = mysqli_query($connection, $query);
 
-                    if (!create_comment_query) {
+                    if (!$create_comment_query) {
                         die( "Query Faild" .mysqli_error($connection));
                     }
                     
@@ -145,7 +145,7 @@
 
 
             $select_comment_query = mysqli_query($connection, $query); 
-            if (!select_comment_query) {
+            if (!$select_comment_query) {
                 die( "Query Failed" .mysqli_error($connection));
             }
              // confirm($select_comment_query);

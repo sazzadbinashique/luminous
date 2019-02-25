@@ -20,7 +20,17 @@ if (isset($_POST['create_post'])) {
 
 	move_uploaded_file($post_image_temp, "../images/$post_image");
 
-
+	 				if ($post_title == "" || empty($post_title)) {
+                        echo "This Title field should not be Empty";
+                    }elseif ($post_author == "" || empty($post_author)) {
+                    	echo "This  author field should not be Empty";
+                    }elseif ($post_tags == "" || empty($post_tags)) {
+                    	echo "This  tags field should not be Empty";
+                    }elseif ($post_content == "" || empty($post_content)) {
+                    	echo "This content field should not be Empty";
+                    }elseif ($post_status == "" || empty($post_status)) {
+                    	echo "This Status field should not be Empty";
+                    }else{
 
 
 	 $query = "INSERT INTO posts(post_category_id, post_title, post_author, post_date, post_image, post_content, post_tags, post_status)";
@@ -31,7 +41,10 @@ if (isset($_POST['create_post'])) {
 
 
 		confirm($create_post_query);
-
+		    
+        echo "<h4 class ='alert alert-success float-right' >Add Post Create Succesfully:" . " " . "<a href = 'post.php' > View Posts</a></h4>";
+                         
+}
 
 }
 

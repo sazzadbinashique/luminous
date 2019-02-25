@@ -1,21 +1,14 @@
 <?php include "includes/header.php"; ?>
 
-
     <!-- Navigation -->
- 
-    <?php  include "includes/db.php"; ?>
+     <?php  include "includes/db.php"; ?>
     <?php  include "includes/navigation.php"; ?>
-
 
     <!-- Page Content -->
     <div class="container">
-
         <div class="row">
-
             <!-- Blog Entries Column -->
-
             <div class="col-md-8">
-
  <?php 
     $query = "SELECT * FROM  posts ";
     $select_all_post_query = mysqli_query($connection, $query);
@@ -32,18 +25,11 @@
         $post_content = substr($row['post_content'], 0,200);
         $post_status = $row['post_status'];
 
-
-
-
-        if ($post_status !== "published") {
-            echo "<h1 class ='text-center'>Oppos! Does not post yet</h1>";
-        } else{
-
-
+        if ($post_status == "published") {
+        //     echo "<h1 class ='text-center'>Oppos! Does not have this post yet</h1>";
+        // } else{
        
 ?>
-
-
 
                 <h1 class="page-header">
                     Page Heading
@@ -66,26 +52,14 @@
 
                 <hr>
 
-
-
-
    <?php } } ?>
-
 
             </div>
 
-
-
-
             <!-- Blog Sidebar Widgets Column -->
-
-
 <?php include "includes/sidebar.php"; ?>
-
 
         </div>
         <!-- /.row -->
-
         <hr>
-
 <?php include "includes/footer.php"; ?>
