@@ -91,12 +91,17 @@ if (isset($_POST['create_post'])) {
 		<input type="text" class="form-control" name="post_author" >
 	</div>	
 	<div class="form-group">
-		<label for="">Post Status</label>
-		<input type="text" class="form-control" name="post_status" placeholder="example: published">
-	</div>	
-	<div class="form-group">
+		<select name="post_status" id="">
+			<option value="draft">Select Option</option>
+			<option value="published">Publish</option>
+			<option value="draft">Draft</option>
+		</select>
+	</div>
+
+	
+	<div class="form-group" >
 		<label for="">Post Image</label>
-		<input type="file" class="form-control" name="post_image">
+		<input style="padding: 0px;" type="file" class="form-control" name="post_image">
 	</div>
 	
 

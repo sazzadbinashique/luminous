@@ -86,6 +86,8 @@
                     $comment_content = $_POST['comment_content'];
 
 
+                    if (!empty($comment_author) && !empty($comment_email) && !empty($comment_content)) {
+
 
                     $query = "INSERT INTO comments (comment_post_id, comment_author, comment_email, comment_content, comment_status, comment_date)";
 
@@ -105,7 +107,16 @@
 
 
                     $update_comment_count_query = mysqli_query($connection, $query);       
+            
+                        
+                    }else{
+
+                        echo "<script> alert('This field cannot be empty')</scirpt>";
+                    }
+
                 }
+
+
 
 
 

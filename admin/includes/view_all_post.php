@@ -80,6 +80,7 @@
                                     <th>Comment</th>
                                     <th>Status</th>
                                     <th>Date</th>
+                                    <th>View Post</th>
                                     <th>Edit</th>
                                     <th>Delete</th>
                                 </tr>
@@ -113,7 +114,7 @@
    echo "<tr>";
 ?>
 
-<td><input type='checkbox' name='checkBoxArray[]' class='checkbox' value='<?php echo $post_id; ?>'></td>
+<td><input type='checkbox' name='checkBoxArray[]' class='checkBoxes' value='<?php echo $post_id; ?>'></td>
 
 
 <?php 
@@ -143,6 +144,7 @@
    echo "<td>$post_comment_count</td>";
    echo "<td>$post_status</td>";
    echo "<td>$post_date</td>";
+   echo "<td><a href='../post.php?p_id={$post_id}'>View Post</a></td>";
    echo "<td><a href='post.php?source=edit_post&p_id={$post_id}'>Edit</a></td>";
    echo "<td><a href='post.php?delete={$post_id}'>Delete</a></td>";
    echo "</tr>";
