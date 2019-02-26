@@ -33,6 +33,7 @@
 		 	 $user_lastname = $row['user_lastname'];
 		 	 $user_role = $row['user_role'];
 		}
+		$password = crypt($password, $user_password);
 
 
 

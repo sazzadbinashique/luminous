@@ -56,6 +56,18 @@
 	// }
 
 
+	 	$query = "SELECT randsalt FROM users"; 
+        $select_randsalt_query = mysqli_query($connection, $query); 
+        if (!$select_randsalt_query) {
+            die("query Failed" .mysqli_error($connection));
+        }
+
+
+        $row = mysqli_fetch_array($select_randsalt_query);
+        $randsalt = $row['randsalt'];
+        $hashed_password = crypt($user_password, $randsalt);
+
+
 
 	$query = "UPDATE users SET ";
 	$query.="user_firstname = '{$user_firstname}',";
@@ -63,14 +75,15 @@
 	$query.="user_role = '{$user_role}',";
 	$query.="username = '{$username}',";
 	$query.="user_email = '{$user_email}',";
-	$query.="user_password = '{$user_password}'";
+	$query.="user_password = '{$hashed_password}'";
 	$query.="WHERE user_id = '{$the_user_id}'";
 
 
 	$edit_query = mysqli_query($connection, $query);
 
 	confirm($edit_query);
-	header("Location: users.php");
+	echo "<h4 class ='alert alert-success' >User Updated Succesfully <a href ='users.php' >View all Users</a></h4>";
+	
 
    	}
 
@@ -95,7 +108,7 @@
 		<select name="user_role" id="" >
 	
  
-			 <option value="subscriber"><?php echo $user_role; ?></option>
+			 <option value="<?php echo $user_role; ?>"><?php echo $user_role; ?></option>
 
 			 <?php 
 			 if ($user_role == 'admin') {
