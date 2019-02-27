@@ -7,35 +7,21 @@ if (isset($_POST['create_user'])) {
 	$user_lastname= $_POST['user_lastname'];
 	$user_role= $_POST['user_role'];
 
-
 	// $post_image= $_FILES['post_image']['name'];
 	// $post_image_temp= $_FILES['post_image']['tmp_name'];
-
-
 
 	$username= $_POST['username'];
 	$user_email= $_POST['user_email'];
 	$user_password= $_POST['user_password'];
 	// $post_date= date('d-m-y');
 
-
- 
-
 	// move_uploaded_file($post_image_temp, "../images/$post_image");
-
 	
-
-
-
-
 	 $query = "INSERT INTO users(user_firstname, user_lastname, user_role, username, user_email, user_password)";
 	 $query.= "VALUES ('{$user_firstname}', '{$user_lastname}', '{$user_role}', '{$username}', '{$user_email}', '{$user_password}') ";
 
-
 	 $create_user_query = mysqli_query($connection, $query);
-
-
-	confirm($create_user_query);
+	 confirm($create_user_query);
 
 	echo "<h4 class ='alert alert-success float-right' >User Created Succesfully:" . " " . "<a href = 'users.php' > View Users</a></h4>";
 

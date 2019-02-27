@@ -127,11 +127,6 @@
 	</div>
 
 
-
-
-
-
-
 	<div class="form-group">
 		<!-- <label for="">Post Image</label> -->
 		<img width = "100" src="../images/<?php echo $post_image ?>" alt="Image">
