@@ -59,6 +59,6 @@ $(document).ready(function($) {
     Body.addClass('preloader-site');
 });
 $(window).load(function() {
-    $('.preloader-wrapper').fadeOut();
+    $('.preloader-wrapper').fadeOut(700);
     $('body').removeClass('preloader-site');
 });
