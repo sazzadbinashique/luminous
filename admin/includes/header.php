@@ -56,9 +56,9 @@ if (!isset($_SESSION['user_role'])) {
 
 <body >
 
-<div class="preloader-wrapper">
+<!-- <div class="preloader-wrapper">
     <div class="preloader">
         <img height="300px" width="300px" src="../images/loader.gif" alt="NILA">
     </div>
 </div>
-
+ -->

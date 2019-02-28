@@ -22,7 +22,7 @@
 
 
 /*----------------------- Preloader -----------------------*/
-body.preloader-site {
+/*body.preloader-site {
     overflow: hidden;
 }
 
@@ -43,4 +43,4 @@ body.preloader-site {
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     width: 100px;
-}
+}*/

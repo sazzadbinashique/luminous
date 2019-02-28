@@ -1,6 +1,16 @@
 <?php include "includes/header.php"; ?>
 
     <div id="wrapper" >
+    <?php 
+
+    
+
+     ?>    
+
+
+
+
+
 
         <!-- Navigation -->
 <?php include "includes/navigation.php"; ?>
@@ -14,6 +24,10 @@
                            Welcome to Admin
                             <small><?php echo $_SESSION['username']; ?></small>
                         </h1>
+                        <h1>
+                            <?php echo user_online(); ?>
+                        </h1>
+
                     </div>
                 </div>
                 <!-- /.row -->
