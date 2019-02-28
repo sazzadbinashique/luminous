@@ -26,7 +26,7 @@
    	if (isset($_POST['edit_user'])) {
    	 
 
-	$user_id= $_POST['user_id'];
+	// $user_id= $_POST['user_id'];
 	$user_firstname= $_POST['user_firstname'];
 	$user_lastname= $_POST['user_lastname'];
 	$user_role= $_POST['user_role'];
@@ -82,6 +82,7 @@
 	$edit_query = mysqli_query($connection, $query);
 
 	confirm($edit_query);
+	
 	echo "<h4 class ='alert alert-success' >User Updated Succesfully <a href ='users.php' >View all Users</a></h4>";
 	
 

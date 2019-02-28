@@ -34,7 +34,7 @@
     if (isset($_POST['edit_user'])) {
      
 
-  $user_id= $_POST['user_id'];
+  // $user_id= $_POST['user_id'];
   $user_firstname= $_POST['user_firstname'];
   $user_lastname= $_POST['user_lastname'];
   $user_role= $_POST['user_role'];
@@ -88,15 +88,11 @@
 
     <div id="wrapper">
 
-
-
         <!-- Navigation -->
 
 <?php include "includes/navigation.php"; ?>
 
         <div id="page-wrapper">
-
-
 
             <div class="container-fluid">
                 <!-- Page Heading -->
@@ -108,8 +104,6 @@
                             <small>Author</small>
                         
                         </h1>
-
-
 <form action="" method="post" enctype="multipart/form-data">
   
   <div class="form-group">
