@@ -1,27 +1,19 @@
-
 <?php include "../includes/db.php"; ?>
 <?php include "function.php"; ?>
 <?php ob_start(); ?>
 <?php session_start();?>
-
 <?php 
 if (!isset($_SESSION['user_role'])) {
 
     header("Location: ../index.php");
-
-   
+ 
 }else{
 
     //  if ($_SESSION['user_role'] !== 'admin') {
-
     //     header("Location: ../index.php");
     // }
 }
-
-    
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -63,3 +55,10 @@ if (!isset($_SESSION['user_role'])) {
 </head>
 
 <body >
+
+<div class="preloader-wrapper">
+    <div class="preloader">
+        <img height="300px" width="300px" src="../images/loader.gif" alt="NILA">
+    </div>
+</div>
+

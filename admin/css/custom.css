@@ -1,23 +1,46 @@
-#load-screen {
-background: url('../images/header-back.png');
-position: fixed;
-z-index: 10000;
-top:0px;
-width: 100%;
-height: 1600px;
-
+/*#load-screen {
+	background: url(../images/header-back.png);
+	position: fixed;
+	z-index: 10000;
+	top: 0;
+	width: 100%;
+	height: 1600px;
 }
-
 
 #loading {
+	width: 500px;
+	height: 500px;
+	margin: 10% auto;
+	background: url('../images/loader.gif');
+	background-size: 40%;
+	background-repeat: no-repeat;
+	background-position: center;
+	z-index: 1;
+}*/
 
-width: 500px;
-height: 500px;
-margin: 10% auto;
-background: url('../images/loader1.gif');
-background-size: 40%;
-background-repeat: no-repeat;
-background-position: center;
 
+
+
+/*----------------------- Preloader -----------------------*/
+body.preloader-site {
+    overflow: hidden;
 }
 
+.preloader-wrapper {
+    height: 100%;
+    width: 100%;
+    background: #FFF;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999999;
+}
+
+.preloader-wrapper .preloader {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 100px;
+}

@@ -33,15 +33,32 @@ tinymce.init({ selector:'textarea' });
                 this.checked = false;
             });
         }
-    });		
+    });	
 
+  
+
+});
+
+$(document).ready(function() {
+  
+  // Preloading 
     var div_box ="<div id='load-screen'><div id='loading'></div></div>";
+
     $("body").prepend("div_box");
-    $('#load-screen').delay(700).fadeOut(600, function(){
+
+    $('#load-screen').delay(400).fadeOut(600, function(){
         $(this).remove();
     });
 
 
+});
 
 
+$(document).ready(function($) {
+    var Body = $('body');
+    Body.addClass('preloader-site');
+});
+$(window).load(function() {
+    $('.preloader-wrapper').fadeOut();
+    $('body').removeClass('preloader-site');
 });
