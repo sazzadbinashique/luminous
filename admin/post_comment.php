@@ -19,8 +19,6 @@
                             <small>Author</small>
                         </h1>
 
-
-
                        <table class="table table-bordered table-hover">
                             <thead>
                                 <tr>
@@ -43,12 +41,12 @@
 <?php 
 
 
-
-    $query = "SELECT * FROM  comments WHERE comment_post_id = " . mysqli_real_escape_string($connection, $_GET ['id'])."";
+    $query = "SELECT * FROM  comments WHERE comment_post_id = " . mysqli_real_escape_string($connection, $_GET['id']) . "";
     $select_comment = mysqli_query($connection, $query);
 
-    while ($row = mysqli_fetch_assoc($select_comment)) {
+    while($row = mysqli_fetch_assoc($select_comment)) {
 
+     
     $comment_id = $row['comment_id'];
     $comment_post_id = $row['comment_post_id'];
     $comment_author = $row['comment_author'];
@@ -62,19 +60,6 @@
    echo "<td>$comment_id</td>";
    echo "<td>$comment_author</td>";
    echo "<td>$comment_content</td>";
-
-  //   $query = "SELECT * FROM  category WHERE cat_id = {$post_category_id}";
-  //   $select_categories_id = mysqli_query($connection, $query);
-
-  //   while ($row = mysqli_fetch_assoc($select_categories_id)) {
-
-  //   $cat_id = $row['cat_id'];
-  //   $cat_title = $row['cat_title'];
-
-
-  //  echo "<td>$cat_title</td>";
-  // }
-
 
 
    echo "<td>$comment_email</td>";
@@ -93,17 +78,18 @@
    echo "<td> <a href='../post.php?p_id=$post_id'> $post_title</a></td>";
    echo "<td><a href='comment.php?approve={$comment_id}'>Approve</a></td>";
    echo "<td><a href='comment.php?unapprove={$comment_id}'>Unapprove</a></td>";
-   echo "<td><a href='comment.php?delete={$comment_id}'>Delete</a></td>";
+   echo "<td><a href='post_comment.php?delete=$comment_id'>Delete</a></td>";
    echo "</tr>";
 }
 
 
+
  ?>
 
-                                </tr>
-                            </tbody>
+                            </tr>
+                        </tbody>
 
-                        </table>
+                    </table>
 
 
 
@@ -149,7 +135,7 @@ if (isset($_GET['delete'])) {
 
   confirm($comment_delete_query);
 
-  header("Location: comment.php");
+  header("Location: post_comment.php?id =" . isset($_GET['id']) . " ");
 }
 
 

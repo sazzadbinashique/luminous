@@ -173,7 +173,7 @@
    $comment_id = $row ['comment_id'];
    $post_comment_count = mysqli_num_rows($comment_count_query);
 
-   echo "<td><a href ='post_comment.php?id=$post_id '>$post_comment_count</a></td>";
+   echo "<td><a href ='post_comment.php?id={$post_id}'>$post_comment_count</a></td>";
    
 
 
