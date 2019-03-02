@@ -33,17 +33,20 @@
 		 	 $user_lastname = $row['user_lastname'];
 		 	 $user_role = $row['user_role'];
 		}
-		$password = crypt($password, $user_password);
+
+		//$password = crypt($password, $user_password);
 
 
 
 
-		if ($username !== $user_username && $password !== $user_password) {
-			header("Location: ../index.php");
+		// if ($username !== $user_username && $password !== $user_password) {
+		// 	header("Location: ../index.php");
 
-		}elseif ($username == $user_username && $password ==$user_password ) {
+		// }elseif ($username == $user_username && $password ==$user_password )
+
+		
+		if(password_verify($password, $user_password)) {
 			
-
 			$_SESSION['username'] = $user_username;	
 			$_SESSION['user_firstname'] = $user_firstname;	
 			$_SESSION['user_lastname'] = $user_lastname;	

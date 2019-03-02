@@ -14,22 +14,25 @@
         $user_email = $_POST['user_email'];
         $password = $_POST['user_password'];
 
-        if (!empty($username) && !empty($user_email) && !empty($user_password)) {
+        if (!empty($username) && !empty($user_email) && !empty($password)) {
             
         $username = mysqli_real_escape_string($connection, $username);
         $user_email = mysqli_real_escape_string($connection, $user_email);
-        $password = mysqli_real_escape_string($connection, $user_password);
-
-        $query = "SELECT randsalt FROM users"; 
-        $select_randsalt_query = mysqli_query($connection, $query); 
-        if (!$select_randsalt_query) {
-            die("query Failed" .mysqli_error($connection));
-        }
+        $password = mysqli_real_escape_string($connection, $password);
 
 
-        $row = mysqli_fetch_array($select_randsalt_query);
-        $randsalt = $row['randsalt'];
-        $password = crypt($password, $randsalt);
+        $password = password_hash($password, PASSWORD_BCRYPT, array('cost'=> 12));
+
+        // $query = "SELECT randsalt FROM users"; 
+        // $select_randsalt_query = mysqli_query($connection, $query); 
+        // if (!$select_randsalt_query) {
+        //     die("query Failed" .mysqli_error($connection));
+        // }
+
+
+        // $row = mysqli_fetch_array($select_randsalt_query);
+        // $randsalt = $row['randsalt'];
+        // $password = crypt($password, $randsalt);
 
         $query = "INSERT INTO users (Username,user_email, user_password, user_role) ";
         $query.= "VALUES ('{$username}', '{$user_email}', '{$password}','subscriber') ";

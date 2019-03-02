@@ -2,89 +2,80 @@
 <?php 
 
 
-	if (isset($_GET['edit_user'])) {
-		$the_user_id = $_GET['edit_user'];
+		if (isset($_GET['edit_user'])) {
+			$the_user_id = $_GET['edit_user'];
+		}
+
+
+	    $query = "SELECT * FROM  users WHERE user_id= $the_user_id ";
+	    $select_users = mysqli_query($connection, $query);
+	    while ($row = mysqli_fetch_assoc($select_users)) {
+
+	    $user_id = $row['user_id'];
+	    $username = $row['username'];
+	    $user_password = $row['user_password'];
+	    $user_firstname = $row['user_firstname'];
+	    $user_lastname = $row['user_lastname'];
+	    $user_email = $row['user_email'];
+	    $user_image = $row['user_image'];
+	    $user_role = $row['user_role'];
+
 	}
-
-
-    $query = "SELECT * FROM  users WHERE user_id= $the_user_id ";
-    $select_users = mysqli_query($connection, $query);
-    while ($row = mysqli_fetch_assoc($select_users)) {
-
-    $user_id = $row['user_id'];
-    $username = $row['username'];
-    $user_password = $row['user_password'];
-    $user_firstname = $row['user_firstname'];
-    $user_lastname = $row['user_lastname'];
-    $user_email = $row['user_email'];
-    $user_image = $row['user_image'];
-    $user_role = $row['user_role'];
-
-}
 
 
    	if (isset($_POST['edit_user'])) {
    	 
 
-	// $user_id= $_POST['user_id'];
-	$user_firstname= $_POST['user_firstname'];
-	$user_lastname= $_POST['user_lastname'];
-	$user_role= $_POST['user_role'];
+		$user_firstname= $_POST['user_firstname'];
+		$user_lastname= $_POST['user_lastname'];
+		$user_role= $_POST['user_role'];
 
 
-	// $post_image= $_FILES['post_image']['name'];
-	// $post_image_temp= $_FILES['post_image']['tmp_name'];
+		$username= $_POST['username'];
+		$user_email= $_POST['user_email'];
+		$user_password= $_POST['user_password'];
+
+
+		if (!empty($user_password)) {
+			$query_password = "SELECT user_password FROM users WHERE user_id = $the_user_id";
+			$get_user_query = mysqli_query($connection, $query_password);
+
+			confirm($get_user_query);
+
+			$row = mysqli_fetch_array($get_user_query);
+
+			$db_user_password = $row['user_password'];
+
+			if ($db_user_password != $user_password) {
+				$hashed_password = password_hash($user_password, PASSWORD_BCRYPT, array('cost'=> 12));
+			}
+
+
+					
+			$query = "UPDATE users SET ";
+			$query.="user_firstname = '{$user_firstname}',";
+			$query.="user_lastname = '{$user_lastname}',";
+			$query.="user_role = '{$user_role}',";
+			$query.="username = '{$username}',";
+			$query.="user_email = '{$user_email}',";
+			$query.="user_password = '{$hashed_password}'";
+			$query.="WHERE user_id = '{$the_user_id}'";
+			$edit_query = mysqli_query($connection, $query);
+
+			confirm($edit_query);
+			
+			echo "<h4 class ='alert alert-success' >User Updated Succesfully <a href ='users.php' >View all Users</a></h4>";
+			
 
 
 
-	$username= $_POST['username'];
-	$user_email= $_POST['user_email'];
-	$user_password= $_POST['user_password'];
+
+
+			
+		}
 
 
 
-	// move_uploaded_file($post_image_temp, "../images/$post_image");
-
-
-	// if (empty($post_image)) {
-	// 	$query = "SELECT * FROM posts WHERE post_id = $the_post_id ";
-	// 	$slect_query_image = mysqli_query($connection, $query); 
-
-	// 	while ($row = mysqli_fetch_array($slect_query_image)) {
-	// 		$post_image = $row['post_image'];
-	// 	}
-	// }
-
-
-	 	$query = "SELECT randsalt FROM users"; 
-        $select_randsalt_query = mysqli_query($connection, $query); 
-        if (!$select_randsalt_query) {
-            die("query Failed" .mysqli_error($connection));
-        }
-
-
-        $row = mysqli_fetch_array($select_randsalt_query);
-        $randsalt = $row['randsalt'];
-        $hashed_password = crypt($user_password, $randsalt);
-
-
-
-	$query = "UPDATE users SET ";
-	$query.="user_firstname = '{$user_firstname}',";
-	$query.="user_lastname = '{$user_lastname}',";
-	$query.="user_role = '{$user_role}',";
-	$query.="username = '{$username}',";
-	$query.="user_email = '{$user_email}',";
-	$query.="user_password = '{$hashed_password}'";
-	$query.="WHERE user_id = '{$the_user_id}'";
-
-
-	$edit_query = mysqli_query($connection, $query);
-
-	confirm($edit_query);
-	
-	echo "<h4 class ='alert alert-success' >User Updated Succesfully <a href ='users.php' >View all Users</a></h4>";
-	
 
    	}
 

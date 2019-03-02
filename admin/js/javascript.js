@@ -54,14 +54,14 @@ tinymce.init({ selector:'textarea' });
 // });
 
 
-// $(document).ready(function($) {
-//     var Body = $('body');
-//     Body.addClass('preloader-site');
-// });
-// $(window).load(function() {
-//     $('.preloader-wrapper').fadeOut(700);
-//     $('body').removeClass('preloader-site');
-// });
+$(document).ready(function($) {
+    var Body = $('body');
+    Body.addClass('preloader-site');
+});
+$(window).load(function() {
+    $('.preloader-wrapper').fadeOut(700);
+    $('body').removeClass('preloader-site');
+});
 
 
 function loadUserOnline(){

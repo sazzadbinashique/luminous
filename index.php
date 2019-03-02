@@ -12,7 +12,7 @@
  <?php 
 
 
-        $per_page = 3;
+        $per_page = 6;
 
         if (isset($_GET['page'])) {
             $page = $_GET['page'];

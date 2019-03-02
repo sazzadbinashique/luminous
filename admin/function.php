@@ -3,16 +3,16 @@
 function user_online(){
 
 
-	// if (isset($_GET['onlineuser'])) {
+	if (isset($_GET['onlineuser'])) {
 
 		
 	global $connection;
 
-	// if (!$connection) {
+	if (!$connection) {
 
-	// 	session_start();
+		session_start();
 
-	// 	include("../includes/db.php");
+		include("../includes/db.php");
 
 		$session = session_id();
 	    $time = time(); 
@@ -37,16 +37,16 @@ function user_online(){
 	     $users_online_query = mysqli_query($connection, "SELECT * FROM users_online WHERE time<'$time' ");
 	     return $count_users = mysqli_num_rows($users_online_query) ;
 
-	     //confirm($count_users);
+	     confirm($count_users);
 
 
-	  //    }
+	     }
 
-   // }
+   }
 }
 
 
-// user_online();
+user_online();
 
 
 
