@@ -1,3 +1,25 @@
+<?php include "includes/header.php"; ?>
+
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+
+<?php include "includes/navigation.php"; ?>
+
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+
+                        <h1 class="page-header">
+                           Welcome to Admin
+                            <small>Author</small>
+                        </h1>
+
+
 
                        <table class="table table-bordered table-hover">
                             <thead>
@@ -22,7 +44,7 @@
 
 
 
-    $query = "SELECT * FROM  comments";
+    $query = "SELECT * FROM  comments WHERE comment_post_id = " . mysqli_real_escape_string($connection, $_GET ['id'])."";
     $select_comment = mysqli_query($connection, $query);
 
     while ($row = mysqli_fetch_assoc($select_comment)) {
@@ -134,3 +156,16 @@ if (isset($_GET['delete'])) {
 
 
  ?>
+
+                  </div>
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /#page-wrapper -->
+
+
+
+
+ <?php include "includes/footer.php"; ?>

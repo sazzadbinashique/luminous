@@ -1,11 +1,9 @@
 
 <?php 
 
-
 		if (isset($_GET['edit_user'])) {
 			$the_user_id = $_GET['edit_user'];
-		}
-
+		
 
 	    $query = "SELECT * FROM  users WHERE user_id= $the_user_id ";
 	    $select_users = mysqli_query($connection, $query);
@@ -29,8 +27,6 @@
 		$user_firstname= $_POST['user_firstname'];
 		$user_lastname= $_POST['user_lastname'];
 		$user_role= $_POST['user_role'];
-
-
 		$username= $_POST['username'];
 		$user_email= $_POST['user_email'];
 		$user_password= $_POST['user_password'];
@@ -51,7 +47,6 @@
 			}
 
 
-					
 			$query = "UPDATE users SET ";
 			$query.="user_firstname = '{$user_firstname}',";
 			$query.="user_lastname = '{$user_lastname}',";
@@ -66,17 +61,13 @@
 			
 			echo "<h4 class ='alert alert-success' >User Updated Succesfully <a href ='users.php' >View all Users</a></h4>";
 			
+			}
 
-
-
-
-
-			
 		}
 
+   	}else{
 
-
-
+   		header("Loction: index.php");
    	}
 
  ?>
@@ -93,12 +84,10 @@
 		<label for="">LastName</label>
 		<input type="text" value="<?php echo $user_lastname;?>" class="form-control" name="user_lastname">
 	</div>
-	
 
 	<div class="form-group">
 		<!-- <label for="">Post Category </label> -->
 		<select name="user_role" id="" >
-	
  
 			 <option value="<?php echo $user_role; ?>"><?php echo $user_role; ?></option>
 
@@ -115,7 +104,6 @@
 
 			  ?>
 
-
 		</select>
 	</div>
 	<div class="form-group">
@@ -127,12 +115,6 @@
 		<label for="">Email</label>
 		<input type="email" value="<?php echo $user_email; ?>" class="form-control" name="user_email">
 	</div>	
-
-	<!-- <div class="form-group">
-		<label for="">Post Image</label>
-		<input type="file" class="form-control" name="post_image">
-	</div>
-	 -->
 
 	<div class="form-group">
 		<label for="">password</label>

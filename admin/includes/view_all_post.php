@@ -164,7 +164,19 @@
    echo "<td>$post_content</td>";
    echo "<td><img src='../images/{$post_image}' alt='Image' width =100 ></td>";
    echo "<td>$post_tags</td>";
-   echo "<td>$post_comment_count</td>";
+
+
+   $query = "SELECT * FROM comments WHERE comment_post_id = $post_id ";
+   $comment_count_query= mysqli_query($connection, $query);
+
+   $row = mysqli_fetch_array($comment_count_query);
+   $comment_id = $row ['comment_id'];
+   $post_comment_count = mysqli_num_rows($comment_count_query);
+
+   echo "<td><a href ='post_comment.php?id=$post_id '>$post_comment_count</a></td>";
+   
+
+
    echo "<td>$post_status</td>";
    echo "<td>$post_date</td>";
    echo "<td><a href='../post.php?p_id={$post_id}'>View Post</a></td>";

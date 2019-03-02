@@ -36,7 +36,7 @@
 
 
     while ($row = mysqli_fetch_assoc($select_individual_post_query)) {
-        // $post_id = $row['post_id'];
+        
         $post_title = $row['post_title'];
         $post_author = $row['post_author'];
         $post_date = $row['post_date'];
@@ -107,11 +107,9 @@
                     
 
 
-                    $query = "UPDATE posts SET post_comment_count = post_comment_count +1 "; 
-                    $query.= "WHERE post_id = $the_post_id ";
-
-
-                    $update_comment_count_query = mysqli_query($connection, $query);       
+                    // $query = "UPDATE posts SET post_comment_count = post_comment_count +1 "; 
+                    // $query.= "WHERE post_id = $the_post_id ";
+                    // $update_comment_count_query = mysqli_query($connection, $query);       
             
                         
                     }else{
