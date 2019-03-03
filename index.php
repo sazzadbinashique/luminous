@@ -36,11 +36,6 @@
         $result = ceil($result/$per_page) ;
 
 
-
-
-
-
-
     $query = "SELECT * FROM  posts LIMIT $page_1, $per_page  ";
     $select_all_post_query = mysqli_query($connection, $query);
 
@@ -89,13 +84,9 @@
         <!-- /.row -->
         <hr>
 
-
         <ul class="pager">
             <?php 
-
-
             for ($i=1; $i <=$result ; $i++) { 
-
 
                 if ($i == $page) {
 
@@ -109,10 +100,6 @@
 
              ?>
 
-
         </ul>
-
-
-
 
 <?php include "includes/footer.php"; ?>

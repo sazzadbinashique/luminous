@@ -26,7 +26,6 @@
     $query = "SELECT * FROM  posts WHERE post_category_id= $the_category_id";
     $select_all_post_query = mysqli_query($connection, $query);
 
-    // print_r($select_all_post_query);
 
     while ($row = mysqli_fetch_assoc($select_all_post_query)) {
     
@@ -41,11 +40,7 @@
 
 
 
-                <h1 class="page-header">
-                    Page Heading
-                    <small>Secondary Text</small>
-                </h1>
-
+            
                 <!-- First Blog Post -->
                 <h2>
                     <a href="post.php?p_id=<?php echo $post_id; ?>"><?php echo $post_title?></a>

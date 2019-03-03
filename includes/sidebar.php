@@ -42,13 +42,6 @@
                 </div
 
 
-
-
-
-
-
-
-
                 <!-- Blog Categories Well -->
                 <div class="well">
 
