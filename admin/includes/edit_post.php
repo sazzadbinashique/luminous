@@ -12,7 +12,7 @@
     while ($row = mysqli_fetch_assoc($select_post)) {
 
     $post_id = $row['post_id'];
-    $post_author = $row['post_author'];
+    $post_user = $row['post_user'];
     $post_title = $row['post_title'];
     $post_category_id = $row['post_category_id'];
     $post_image = $row['post_image'];
@@ -30,7 +30,7 @@
 
 	$post_category_id= $_POST['post_category'];
 	$post_title= $_POST['post_title'];
-	$post_author= $_POST['post_author'];
+	$post_user= $_POST['post_user'];
 
 
 	$post_image= $_FILES['post_image']['name'];
@@ -60,7 +60,7 @@
 	$query.="post_title = '{$post_title}',";
 	$query.="post_category_id = '{$post_category_id}',";
 	$query.="post_date = now(),";
-	$query.="post_author = '{$post_author}',";
+	$query.="post_user = '{$post_user}',";
 	$query.="post_status = '{$post_status}',";
 	$query.="post_content = '{$post_content}',";
 	$query.="post_image = '{$post_image}'";
@@ -84,10 +84,8 @@
 		<input  value="<?php echo $post_title; ?>" type="text" class="form-control" name="post_title">
 	</div>	
 	<div class="form-group">
-		<!-- <label for="">Post Category </label> -->
+		<label for="">Category </label>
 		<select name="post_category" id="">
-
-			
 
 			<?php 
 
@@ -109,9 +107,27 @@
 	</div>	
 
 	<div class="form-group">
+		<label for="post_user">Author</label>
+			<select name="post_user" id="">
+				<?php 
+				$query = "SELECT * FROM  users ";
+	            $select_users = mysqli_query($connection, $query);
+
+	            confirm($select_users);
+
+	            while ($row = mysqli_fetch_assoc($select_users)) {
+	            $user_id = $row['user_id'];
+	            $username = $row['username'];
+	            echo "<option value='$username'>{$username}</option>";
+	       		 }
+				 ?>
+			</select>
+	</div>
+
+	<!-- <div class="form-group">
 		<label for="">Post Author</label>
-		<input value="<?php echo $post_author; ?>" type="text" class="form-control" name="post_author">
-	</div>	
+		<input value="<?php// echo $post_user; ?>" type="text" class="form-control" name="post_user">
+	</div> -->	
 
 	<div class="form-group">
 	<select name="post_status" id="">

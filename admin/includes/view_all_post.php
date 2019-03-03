@@ -92,7 +92,7 @@
                                 <tr>
                                     <th><input type="checkbox" id="selectAllBoxes"></th>
                                     <th>ID</th>
-                                    <th>Author</th>
+                                    <th>User</th>
                                     <th>Title</th>
                                     <th>Category</th>
                                     <th>Content</th>
@@ -122,6 +122,7 @@
 
     $post_id = $row['post_id'];
     $post_author = $row['post_author'];
+    $post_user = $row['post_user'];
     $post_title = $row['post_title'];
     $post_category_id = $row['post_category_id'];
     $post_image = $row['post_image'];
@@ -144,7 +145,18 @@
 
 
    echo "<td>$post_id</td>";
-   echo "<td>$post_author</td>";
+
+
+    if (!empty($post_user)) {
+
+      echo "<td>$post_user</td>";
+
+    }elseif (!empty($post_author)) {
+
+      echo "<td>$post_author</td>";
+    }
+
+
    echo "<td>$post_title</td>";
 
     $query = "SELECT * FROM  category WHERE cat_id = {$post_category_id}";
