@@ -109,6 +109,11 @@
 	<div class="form-group">
 		<label for="post_user">Author</label>
 			<select name="post_user" id="">
+
+				<?php 
+	            echo "<option value='$post_user'>{$post_user}</option>";
+
+				 ?>	
 				<?php 
 				$query = "SELECT * FROM  users ";
 	            $select_users = mysqli_query($connection, $query);
@@ -124,10 +129,6 @@
 			</select>
 	</div>
 
-	<!-- <div class="form-group">
-		<label for="">Post Author</label>
-		<input value="<?php// echo $post_user; ?>" type="text" class="form-control" name="post_user">
-	</div> -->	
 
 	<div class="form-group">
 	<select name="post_status" id="">
