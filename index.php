@@ -28,10 +28,6 @@
         }
 
 
-
-
-
-
         $post_count_query = "SELECT * FROM posts"; 
         $find_count = mysqli_query($connection, $post_count_query);
 

@@ -122,17 +122,25 @@ function deleteCategories(){
 	global $connection;
 
 	if (isset($_GET['delete'])) {
+
+		if (isset($_SESSION['user_role'])) {
+			if ($_SESSION['user_role'] =='admin') {
+				
+				$the_cat_id =mysqli_real_escape_string($connection, $_GET['delete']);
+				$query = "DELETE FROM category WHERE cat_id = {$the_cat_id} ";
+				$delete_query = mysqli_query($connection, $query);
+
+				if (!$delete_query) {
+				    die('QUERY FAILED' . mysqli_error($connection));
+				} 
+
+				header("Location: categories.php");
+
+
+			}
+		}
 	 
-	 $the_cat_id = $_GET['delete'];
-	 $query = "DELETE FROM category WHERE cat_id = {$the_cat_id} ";
-	$delete_query = mysqli_query($connection, $query);
-
-	 if (!$delete_query) {
-	        die('QUERY FAILED' . mysqli_error($connection));
-	    } 
-
-
-	 header("Location: categories.php");
+	
 	}
 }
 

@@ -24,17 +24,11 @@
         $the_post_author = $_GET['author'];
     }
 
-
-    
-
     $query = "SELECT * FROM  posts WHERE post_user= '{$the_post_author}' ";
     $select_individual_post_query = mysqli_query($connection, $query);
-    // print_r($select_individual_post_query) ;
-
 
 
     while ($row = mysqli_fetch_assoc($select_individual_post_query)) {
-        // $post_id = $row['post_id'];
         $post_title = $row['post_title'];
         $post_user = $row['post_user'];
         $post_date = $row['post_date'];
@@ -44,7 +38,6 @@
 
 
 ?>
-
 
 
                <!--  <h1 class="page-header">

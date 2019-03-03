@@ -213,14 +213,24 @@
 <?php   
 
 if (isset($_GET['delete'])) {
-  
-  $the_post_id = $_GET['delete'];
 
-  $query = "DELETE FROM posts WHERE post_id = {$the_post_id} ";
-  $post_delete_query = mysqli_query($connection, $query);
-  confirm($post_delete_query);
 
-  header("Location: post.php");
+  if (isset($_SESSION['user_role'])) {
+    
+    if ($_SESSION['user_role'] == 'admin') {
+      
+
+        $the_post_id =mysqli_real_escape_string($connection, $_GET['delete']);
+
+        $query = "DELETE FROM posts WHERE post_id = {$the_post_id} ";
+        $post_delete_query = mysqli_query($connection, $query);
+        confirm($post_delete_query);
+
+        header("Location: post.php");
+    }
+
+  }
+
 }
 
 
