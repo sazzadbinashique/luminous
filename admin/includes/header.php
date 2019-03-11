@@ -47,7 +47,7 @@ if (!isset($_SESSION['user_role'])) {
 
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script src="https://cloud.tinymce.com/5/tinymce.min.js"></script>
+    <!-- <script src="https://cloud.tinymce.com/5/tinymce.min.js"></script> -->
 
    
 

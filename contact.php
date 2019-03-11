@@ -5,7 +5,7 @@
  <?php  include "includes/navigation.php"; ?>
 
 <?php
-// $to = "sazzad.sumon35@gmail.com";
+// $to = "sajjad.sumon36@gmail.com";
 // $subject = "My subject";
 // $txt = "Hello world!";
 // $headers = "From: webmaster@example.com" . "\r\n" .
@@ -25,16 +25,17 @@
  <?php 
     if (isset($_POST['submit'])) {
 
-        $to ="sazzad.sumon35@gmail.com" ;
+        $to      ="sazzad.sumon35@gmail.com";
         $subject = wordwrap($_POST['subject'], 70);
-        $body = $_POST['body'];
-        $header = $_POST['email'];
+        $body    = $_POST['body'];
+        $header  = "From: " . $_POST['email'];
 
 
        if (mail($to, $subject, $body, $header)) {
-            echo "Mail sent";
+
+            echo "<h3 class ='text-center'>Mail is sent succesfully</h3> ";
         } else{
-            echo "Mail is bad";
+            echo "<h3 class ='text-center'>Mail is not sent succesfully</h3>";
         }
 
     }
@@ -58,18 +59,18 @@
 
                          <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" name="email" id="email" class="form-control" placeholder="Enter your Email">
+                            <input type="email" name="email" id="email" class="form-control" placeholder="Enter your Email" required>
                         </div>
 
                           <div class="form-group">
                             <label for="subject">Subject</label>
-                            <input type="text" name="subject" id="subject" class="form-control" placeholder="Enter your Subject">
+                            <input type="text" name="subject" id="subject" class="form-control" placeholder="Enter your Subject" required>
                         </div>
 
 
                          <div class="form-group">
                             <label for="user_password">Message</label>
-                            <textarea class="form-control" name="body" id="body" cols="50" rows="10"></textarea>
+                            <textarea class="form-control" name="body" id="body" cols="50" rows="10"required></textarea>
                         </div> 
 
                         
@@ -83,9 +84,6 @@
         </div> <!-- /.container -->
 </section>
 
-
         <hr>
-
-
 
 <?php include "includes/footer.php";?>

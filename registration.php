@@ -43,11 +43,11 @@
         }
 
 
-            $message = "Your Registration has been Submitted";
+            $message = "<h5 class='text-center alert alert-success' >Your Registration has been Submitted</h5>";
 
         }else{
 
-            $message = "Your Registration Failed, fill can not be empty !";
+            $message = "<h5 class='text-center alert alert-success'>Your Registration Failed, fill can not be empty !</h5>";
         }
     }else{
 
@@ -71,7 +71,7 @@
                 <h1 class="text-center">Register</h1>
                     <form role="form" action="registration.php" method="post" id="login-form" autocomplete="off">
 
-                        <h5 class="text-center alert alert-success"><?php echo $message; ?></h5>
+                        <?php echo $message; ?>
                         <div class="form-group">
                             <label for="username" class="sr-only">username</label>
                             <input type="text" name="username" id="username" class="form-control" placeholder="Enter Desired Username">

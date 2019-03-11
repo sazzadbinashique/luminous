@@ -14,7 +14,7 @@
 
 		$query = "SELECT * FROM users WHERE username = '{$username}' ";
 		$select_user_query = mysqli_query($connection, $query);
-		print_r($select_user_query);
+		// print_r($select_user_query);
 
 		if (!$select_user_query) {
 			die("Query Failed". mysqli_error($connection));
