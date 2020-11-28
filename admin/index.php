@@ -130,7 +130,7 @@
                                     </div>
                                     <div class="col-xs-9 text-right">
                                      <?php 
-                                       $query = "SELECT * FROM category"; 
+                                       $query = "SELECT * FROM categories";
                                        $select_post_count_query = mysqli_query($connection, $query); 
                                        $categories_count = mysqli_num_rows($select_post_count_query);
                                        echo "<div class='huge'>{$categories_count}</div>";

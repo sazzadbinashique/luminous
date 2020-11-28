@@ -1,4 +1,7 @@
-tinymce.init({ selector:'textarea' });
+tinymce.init({
+    selector:'textarea',
+    theme: "silver"
+});
 
 
 // $(document).ready(function() {

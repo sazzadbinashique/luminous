@@ -77,7 +77,7 @@ function insert_categories(){
 
                     }else{
 
-                        $query = "INSERT INTO category(cat_title) ";
+                        $query = "INSERT INTO categories(cat_title) ";
                         $query.= "VALUES('$cat_title') ";
 
                         $create_categories = mysqli_query($connection, $query);
@@ -97,7 +97,7 @@ function findAllCategories(){
 
 	global $connection;
 
-	$query = "SELECT * FROM  category";
+	$query = "SELECT * FROM  categories";
 	$select_categories = mysqli_query($connection, $query);
 
 	while ($row = mysqli_fetch_assoc($select_categories)) {
@@ -127,7 +127,7 @@ function deleteCategories(){
 			if ($_SESSION['user_role'] =='admin') {
 				
 				$the_cat_id =mysqli_real_escape_string($connection, $_GET['delete']);
-				$query = "DELETE FROM category WHERE cat_id = {$the_cat_id} ";
+				$query = "DELETE FROM categories WHERE cat_id = {$the_cat_id} ";
 				$delete_query = mysqli_query($connection, $query);
 
 				if (!$delete_query) {

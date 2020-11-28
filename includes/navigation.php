@@ -16,7 +16,7 @@
 
 
 <?php 
-$query = "SELECT * FROM  category";
+$query = "SELECT * FROM  categories";
 $select_all_category_query = mysqli_query($connection, $query);
 
 while ($row = mysqli_fetch_assoc($select_all_category_query)) {

@@ -46,7 +46,7 @@
     <div class="well">
 
     <?php 
-        $query = "SELECT * FROM  category";
+        $query = "SELECT * FROM  categories";
     $select_category_sidebar = mysqli_query($connection, $query);
 
    

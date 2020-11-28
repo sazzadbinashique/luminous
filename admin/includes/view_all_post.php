@@ -122,7 +122,7 @@
 
     $post_id = $row['post_id'];
     $post_author = $row['post_author'];
-    $post_user = $row['post_user'];
+//    $post_user = $row['post_user'];
     $post_title = $row['post_title'];
     $post_category_id = $row['post_category_id'];
     $post_image = $row['post_image'];
@@ -159,7 +159,7 @@
 
    echo "<td>$post_title</td>";
 
-    $query = "SELECT * FROM  category WHERE cat_id = {$post_category_id}";
+    $query = "SELECT * FROM  categories WHERE cat_id = {$post_category_id}";
     $select_categories_id = mysqli_query($connection, $query);
 
     while ($row = mysqli_fetch_assoc($select_categories_id)) {

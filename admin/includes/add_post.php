@@ -4,7 +4,7 @@ if (isset($_POST['create_post'])) {
 
 	$post_category_id= $_POST['post_category'];
 	$post_title= $_POST['post_title'];
-	$post_user= $_POST['post_user'];
+	$post_user= $_POST['post_author'];
 	$post_image= $_FILES['post_image']['name'];
 	$post_image_temp= $_FILES['post_image']['tmp_name'];
 	$post_tags= $_POST['post_tags'];
@@ -28,7 +28,7 @@ if (isset($_POST['create_post'])) {
                     }else{
 
 
-	 $query = "INSERT INTO posts(post_category_id, post_title, post_user, post_date, post_image, post_content, post_tags, post_status)";
+	 $query = "INSERT INTO posts(post_category_id, post_title, post_author, post_date, post_image, post_content, post_tags, post_status)";
 	 $query.= "VALUES ({$post_category_id},'{$post_title}','{$post_user}',now(),'{$post_image}','{$post_content}','{$post_tags}','{$post_status}') ";
 
 
@@ -65,7 +65,7 @@ if (isset($_POST['create_post'])) {
 		<select name="post_category" id="" >
 			<?php 
 
-			$query = "SELECT * FROM  category ";
+			$query = "SELECT * FROM  categories ";
             $select_categories = mysqli_query($connection, $query);
 
             confirm($select_categories);
@@ -85,7 +85,7 @@ if (isset($_POST['create_post'])) {
 
 	<div class="form-group">
 		<label for="post_author">Author</label>
-			<select name="post_user" id="">
+			<select name="post_author" id="">
 				<?php 
 
 					$query = "SELECT * FROM  users ";

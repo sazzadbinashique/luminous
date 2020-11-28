@@ -22,8 +22,8 @@
                 
                 $search= $_POST['search'] ;
 
-                $query = "SELECT * FROM posts WHERE post_tags LIKE '%$search%'";
-                $search_query = mysqli_query($connection, $query); 
+                $query = "SELECT * FROM posts WHERE post_tags LIKE '%$search%' OR post_title LIKE '%$search%'";
+                $search_query = mysqli_query($connection, $query);
 
 
                 if (!$search_query) {

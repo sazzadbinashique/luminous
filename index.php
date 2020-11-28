@@ -43,7 +43,7 @@
     
         $post_id = $row['post_id'];
         $post_title = $row['post_title'];
-        $post_user = $row['post_user'];
+        $post_user = $row['post_author'];
         $post_date = $row['post_date'];
         $post_image = $row['post_image'];
         $post_content = substr($row['post_content'], 0,200);

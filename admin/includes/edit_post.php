@@ -12,7 +12,7 @@
     while ($row = mysqli_fetch_assoc($select_post)) {
 
     $post_id = $row['post_id'];
-    $post_user = $row['post_user'];
+    $post_user = $row['post_author'];
     $post_title = $row['post_title'];
     $post_category_id = $row['post_category_id'];
     $post_image = $row['post_image'];
@@ -30,7 +30,7 @@
 
 	$post_category_id= $_POST['post_category'];
 	$post_title= $_POST['post_title'];
-	$post_user= $_POST['post_user'];
+	$post_user= $_POST['post_author'];
 
 
 	$post_image= $_FILES['post_image']['name'];
@@ -60,7 +60,7 @@
 	$query.="post_title = '{$post_title}',";
 	$query.="post_category_id = '{$post_category_id}',";
 	$query.="post_date = now(),";
-	$query.="post_user = '{$post_user}',";
+	$query.="post_author = '{$post_user}',";
 	$query.="post_status = '{$post_status}',";
 	$query.="post_content = '{$post_content}',";
 	$query.="post_image = '{$post_image}'";
@@ -89,7 +89,7 @@
 
 			<?php 
 
-			$query = "SELECT * FROM  category ";
+			$query = "SELECT * FROM  categories ";
             $select_categories = mysqli_query($connection, $query);
 
             confirm($select_categories);
@@ -108,7 +108,7 @@
 
 	<div class="form-group">
 		<label for="post_user">Author</label>
-			<select name="post_user" id="">
+			<select name="post_author" id="">
 
 				<?php 
 	            echo "<option value='$post_user'>{$post_user}</option>";
