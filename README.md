@@ -36,4 +36,4 @@ LUMINOUS is a simple blog based on PHP Language.
 
 ### Screenshot
 
-<img src="#">
+<img src="#" alt="image">
