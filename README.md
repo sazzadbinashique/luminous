@@ -18,7 +18,7 @@ LUMINOUS is a simple blog based on PHP Language.
 1. Comments
 
 ### Install
-01. `git clone https://github.com/parvez-git/real-estate.git`
+01. `git clone https://github.com/sazzadbinashique/luminous.git`
 02. `cd luminous`
 03. `sudo chmod -R 777 /images/`
 04. `create database and import sql file`
@@ -36,4 +36,4 @@ LUMINOUS is a simple blog based on PHP Language.
 
 ### Screenshot
 
-<img src="https://github.com/parvez-git/real-estate/blob/master/public/demo/home.jpg">
+<img src="#">
