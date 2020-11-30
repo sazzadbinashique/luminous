@@ -46,7 +46,7 @@
                 $post_user = $row['post_author'];
                 $post_date = $row['post_date'];
                 $post_image = $row['post_image'];
-                $post_content = substr($row['post_content'], 0,200);
+                $post_content = substr($row['post_content'], 0,400);
                 $post_status = $row['post_status'];
 
                 if ($post_status == "published") {

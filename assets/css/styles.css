@@ -14,6 +14,12 @@ a{
 a:hover{
 	color: #9d9d9d;
 	text-decoration: none;
+
+}
+.recent-post ul li a:hover, .category-post ul li a:hover{
+	color: #9d9d9d;
+	text-decoration: none;
+	padding: 5px;
 }
 
 /*Footer Style*/

@@ -70,7 +70,7 @@ if (isset($_POST['submit'])) {
                     <div class="form-wrap">
                         <div class="well">
                             <h1 class="text-center">Register</h1>
-                            <form role="form" action="registration.php" method="post" id="login-form" autocomplete="off">
+                            <form role="form" action="registration" method="post" id="login-form" autocomplete="off">
 
                                 <?php echo $message; ?>
                                 <div class="form-group">
