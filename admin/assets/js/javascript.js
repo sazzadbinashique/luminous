@@ -5,7 +5,7 @@ tinymce.init({
 
 
 // $(document).ready(function() {
-	
+
 // 	$('#selectAllBoxes').click(function(event){
 
 // 		if(this.checked){
@@ -25,25 +25,25 @@ tinymce.init({
 // 	});	
 
 
-	$(document).ready(function(){
+$(document).ready(function(){
     $('#selectAllBoxes').on('click',function(){
         if(this.checked){
             $('.checkBoxes').each(function(){
                 this.checked = true;
             });
         }else{
-             $('.checkBoxes').each(function(){
+            $('.checkBoxes').each(function(){
                 this.checked = false;
             });
         }
-    });	
+    });
 
-  
+
 
 });
 
 // $(document).ready(function() {
-  
+
 //   // Preloading 
 //     var div_box ="<div id='load-screen'><div id='loading'></div></div>";
 
@@ -69,9 +69,9 @@ $(window).load(function() {
 
 function loadUserOnline(){
 
-    $.get("funtion.php?onlineuser=result", function(){
+    $.get("function?onlineuser=result", function(data){
 
-        $(".useronline").text(data);
+        $(".usersonline").text(data);
 
     });
 }
@@ -79,6 +79,6 @@ function loadUserOnline(){
 
 setInterval(function(){
 
-loadUserOnline();
-    
+    loadUserOnline();
+
 },500);

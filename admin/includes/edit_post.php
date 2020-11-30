@@ -36,7 +36,7 @@ if (isset($_POST['update_post'])) {
     $post_image_temp= $_FILES['post_image']['tmp_name'];
 
     $post_tags= mysqli_real_escape_string($connection, $_POST['post_tags']);
-    $post_content= mysqli_real_escape_string($connection, $_POST['post_content']);
+    $post_content= mysqli_real_escape_string($connection, strip_tags($_POST['post_content']));
     $post_status= $_POST['post_status'];
 
     move_uploaded_file($post_image_temp, "../images/$post_image");

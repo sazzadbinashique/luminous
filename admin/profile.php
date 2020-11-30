@@ -108,14 +108,14 @@ if (isset($_POST['edit_user'])) {
                             <div class="col-xs-8 col-xs-offset-2">
                                 <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
                                     <div class="form-group">
-                                        <label for=""  class="col-xs-2  control-label">FirstName</label>
+                                        <label for=""  class="col-xs-2  control-label">First Name</label>
                                         <div class="col-xs-10">
                                             <input type="text" value="<?php echo $user_firstname; ?>" class="form-control" name="user_firstname">
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="" class="col-xs-2  control-label">LastName</label>
+                                        <label for="" class="col-xs-2  control-label">Last Name</label>
                                         <div class="col-xs-10">
                                             <input type="text" value="<?php echo $user_lastname;?>" class="form-control" name="user_lastname">
                                         </div>
@@ -123,19 +123,15 @@ if (isset($_POST['edit_user'])) {
 
 
                                     <div class="form-group">
-                                        <label for="" class="col-xs-2  control-label">Post Category </label>
+                                        <label for="" class="col-xs-2  control-label">Role </label>
                                         <div class="col-xs-10">
                                             <select name="user_role" id="" class="form-control">
-                                                <option value="subscriber"><?php echo $user_role; ?></option>
+                                                <option value="<?php echo $user_role; ?>"><?php echo $user_role; ?></option>
                                                 <?php
                                                 if ($user_role == 'admin') {
-
                                                     echo "<option value='subscriber'>subscriber</option>";
-
                                                 }else{
-
                                                     echo "<option value='admin'>admin</option>";
-
                                                 }
                                                 ?>
                                             </select>

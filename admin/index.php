@@ -2,11 +2,26 @@
 <?php include "includes/header.php"; ?>
 
 <div id="wrapper" >
-    <?php
+  <!--  --><?php
+/*    $session = session_id();
+    $time =time();
+    $time_out_in_seconds= 60;
+    $time_out =$time - $time_out_in_seconds;
 
+    $query ="SELECT * FROM users_online WHERE session ='$session'";
+    $send_query=mysqli_query($connection, $query);
+    $count = mysqli_num_rows($send_query);
 
+    if ($count == NULL){
+        $create_user_online=mysqli_query($connection, "INSERT INTO users_online(session, time)VALUE ('$session', '$time')");
+        confirm($create_user_online);
+    }else{
+        mysqli_query($connection, "UPDATE users_online SET time='$time' WHERE session ='$session'");
+    }
+    $user_online_query= mysqli_query($connection, "SELECT * FROM users_online WHERE time >'$time_out'");
+    $user_count =mysqli_num_rows($user_online_query);
 
-    ?>
+    */?>
 
     <!-- Navigation -->
     <?php include "includes/navigation.php"; ?>
@@ -20,9 +35,9 @@
                         Welcome to Admin
                         <small><?php echo $_SESSION['username']; ?></small>
                     </h1>
-                    <h1>
-                        <?php echo user_online(); ?>
-                    </h1>
+                   <!-- <h1>
+                        <?php /*echo user_online(); */?>
+                    </h1>-->
 
                 </div>
             </div>
