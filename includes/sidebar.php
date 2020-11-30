@@ -7,7 +7,7 @@
     <!-- Blog Search Well -->
     <div class="well">
         <h3 class="text-center">Blog Search</h3>
-        <form action="search.php" method="post">    
+        <form action="search" method="post">
         <div class="input-group">
             <input name="search" type="text" class="form-control">
             <span class="input-group-btn">
@@ -67,7 +67,7 @@
                     $cat_title = $row['cat_title'];
                     $cat_title = strtoupper($cat_title);
 
-                    echo "<li><a href='category.php?category= $cat_id'>{$cat_title}</a></li>";
+                    echo "<li><a href='category?category= $cat_id'>{$cat_title}</a></li>";
 
                     }
                  ?>

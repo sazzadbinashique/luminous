@@ -2,63 +2,57 @@
 <?php include "includes/header.php"; ?>
 
 
-    <div id="wrapper">
+<div id="wrapper">
 
-        <!-- Navigation -->
+    <!-- Navigation -->
 
-<?php include "includes/navigation.php"; ?>
+    <?php include "includes/navigation.php"; ?>
 
-        <div id="page-wrapper">
+    <div id="page-wrapper">
 
-            <div class="container-fluid">
-                <!-- Page Heading -->
-                <div class="row">
-                    <div class="col-lg-12">
-
-                        <h1 class="page-header">
-                           Welcome to Admin
-                            <small>Author</small>
-                        </h1>
- 
- <?php 
-  if (isset($_GET['source'])) {
-     $source = $_GET['source'];
-  }else{
-    $source = "";
-  }
+        <div class="container-fluid">
+            <!-- Page Heading -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <?php
+                    if (isset($_GET['source'])) {
+                        $source = $_GET['source'];
+                    }else{
+                        $source = "";
+                    }
 
 
-  switch ($source) {
-      case 'add_user':
-          include "includes/add_user.php";
-          break;
+                    switch ($source) {
+                        case 'add_user':
+                            include "includes/add_user.php";
+                            break;
 
-      case 'edit_user':
-           include "includes/edit_user.php";   
-              break;    
-      
-      default:
-          include "includes/view_all_user.php";
-          
-          break;
-  }
+                        case 'edit_user':
+                            include "includes/edit_user.php";
+                            break;
 
-  ?>
+                        default:
+                            include "includes/view_all_user.php";
+
+                            break;
+                    }
+
+                    ?>
 
 
 
 
 
 
-                    </div>
                 </div>
-                <!-- /.row -->
             </div>
-            <!-- /.container-fluid -->
+            <!-- /.row -->
         </div>
-        <!-- /#page-wrapper -->
+        <!-- /.container-fluid -->
+    </div>
+    <!-- /#page-wrapper -->
 
 
 
 
- <?php include "includes/footer.php"; ?>
+<?php include "includes/footer.php"; ?>

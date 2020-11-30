@@ -2,80 +2,75 @@
 <?php include "includes/header.php"; ?>
 
 
-    <div id="wrapper">
+<div id="wrapper">
 
-        <!-- Navigation -->
+    <!-- Navigation -->
 
-<?php include "includes/navigation.php"; ?>
+    <?php include "includes/navigation.php"; ?>
 
-        <div id="page-wrapper">
+    <div id="page-wrapper">
 
-            <div class="container-fluid">
-                <!-- Page Heading -->
-                <div class="row">
-                    <div class="col-lg-12">
+        <div class="container-fluid">
+            <!-- Page Heading -->
+            <div class="row">
+                <div class="col-lg-12">
 
-                        <h1 class="page-header">
-                           Welcome to Admin
-                            <small>Author</small>
-                        </h1>
+                    <h1 class="page-header">
+                        Welcome to Admin
+                        <small>Author</small>
+                    </h1>
 
-                         <div class="col-xs-6">
-                                <?php insert_categories() ?>
-                                <form action="" method="post">
-                                    <div class="form-group">
-                                        <label for= "cat-title">Add Category</label>
-                                        <input type="text" name="cat_title" class="form-control" autofocus>
-                                    </div>    
-                                    <div class="form-group">
-                                    <input type="submit" name="submit" value="Add Category" class="btn btn-primary" >
-                                    </div>
-                                </form>
+                    <div class="col-xs-6">
+                        <?php insert_categories() ?>
+                        <form action="" method="post">
+                            <div class="form-group">
+                                <label for= "cat-title">Add Category</label>
+                                <input type="text" name="cat_title" class="form-control" autofocus>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" name="submit" value="Add Category" class="btn btn-primary" >
+                            </div>
+                        </form>
 
+                        <?php
+                        if (isset($_GET['edit'])) {
 
+                            $cat_id = $_GET['edit'];
 
-                                <?php 
-                                if (isset($_GET['edit'])) {
-                                 
-                                 $cat_id = $_GET['edit'];
+                            include "includes/update_categories.php";
 
-                                 include "includes/update_categories.php";
+                        }
+                        ?>
 
-                                }
-                                ?>
+                    </div> <!--- Add category -->
 
-                            </div> <!--- Add category -->
+                    <div class="col-xs-6">
 
-                            <div class="col-xs-6">
+                        <table class="table table-bordered table-hover" >
+                            <thead>
+                            <tr>
+                                <th>Id </th>
+                                <th>Category Title</th>
+                                <th>Edit Item</th>
+                                <th>Delete Item</th>
+                            </tr>
+                            </thead>
+                            <tbody>
 
-                                <table class="table table-bordered table-hover" >
-                                    <thead>
-                                        <tr>
-                                            <th>Id </th>
-                                            <th>Category Title</th>
-                                            <th>Edit Item</th>
-                                            <th>Delete Item</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
+                            <?php findAllCategories();?>
 
-                                    <?php findAllCategories();?>
+                            <?php deleteCategories();?>
+                            </tbody>
+                        </table>
 
-                                     <?php deleteCategories();?>
-
-                                    </tbody>
-                                </table>
-
-                            </div>  
                     </div>
                 </div>
-                <!-- /.row -->
             </div>
-            <!-- /.container-fluid -->
+            <!-- /.row -->
         </div>
-        <!-- /#page-wrapper -->
+        <!-- /.container-fluid -->
+    </div>
+    <!-- /#page-wrapper -->
 
 
-
-
- <?php include "includes/footer.php"; ?>
+<?php include "includes/footer.php"; ?>

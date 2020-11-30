@@ -1,8 +1,8 @@
+<?php include ('Config/config.php'); ?>
 <?php include "includes/header.php"; ?>
-
     <!-- Navigation -->
-<?php  include "includes/db.php"; ?>
-<?php  include "includes/navigation.php"; ?>
+<?php include "includes/db.php"; ?>
+<?php include "includes/navigation.php"; ?>
 
     <!-- Page Content -->
     <div class="container">
@@ -58,12 +58,12 @@
 
                     <!-- First Blog Post -->
                     <h2>
-                        <a href="post.php?p_id=<?php echo $post_id; ?>"><?php echo $post_title?></a>
+                        <a href="post?p_id=<?php echo $post_id; ?>"><?php echo $post_title?></a>
                     </h2>
                     <div class="row">
                         <div class="col-lg-8">
                             <p class="lead">
-                                by <a href="author_post.php?author=<?php echo $post_user; ?>&p_id=<?php echo $post_id; ?>"><?php echo $post_user?></a>
+                                by <a href="author_post?author=<?php echo $post_user; ?>&p_id=<?php echo $post_id; ?>"><?php echo $post_user?></a>
                             </p>
                         </div>
                         <div class="col-lg-4">
@@ -73,11 +73,11 @@
                     </div>
 
                     <hr>
-                    <a href="post.php?p_id=<?php echo $post_id; ?>">
+                    <a href="post?p_id=<?php echo $post_id; ?>">
                         <img class="img-responsive" src="images/<?php echo $post_image ?> " alt=""></a>
                     <hr>
                     <p><?php echo $post_content;?></p>
-                    <a class="btn btn-primary" href="post.php?p_id=<?php echo $post_id; ?>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+                    <a class="btn btn-primary" href="post?p_id=<?php echo $post_id; ?>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
 
                     <hr>
 
@@ -98,10 +98,10 @@
 
             if ($i == $page) {
 
-                echo "<li><a class ='active_link' href='index.php?page={$i}'>{$i}</a></li>";
+                echo "<li><a class ='active_link' href='index?page={$i}'>{$i}</a></li>";
             }else{
 
-                echo "<li><a href='index.php?page={$i}'>{$i}</a></li>";
+                echo "<li><a href='index?page={$i}'>{$i}</a></li>";
             }
 
         }

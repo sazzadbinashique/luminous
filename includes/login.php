@@ -21,9 +21,6 @@
 
 	 	} 
 
-	
-
-
 		while ($row = mysqli_fetch_array($select_user_query)) {
 			
 		 	 $user_id = $row['user_id'];
@@ -55,7 +52,7 @@
 			header("Location: ../admin");
 		}else{
 
-			header( "Location: ../index.php");
+			header( "Location: ../");
 		}
 
 }
