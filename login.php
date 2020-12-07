@@ -6,7 +6,11 @@
 <!-- Navigation -->
 <?php  include "includes/navigation.php"; ?>
 
-
+<?php
+if (isset($_SESSION['user_role'])) {
+    header("Location: admin");
+}
+?>
 
 <?php
 

@@ -1,10 +1,6 @@
 <?php session_start(); ?>
 
-<?php
-if (isset($_SESSION['user_role'])) {
-    header("Location: admin");
-}
-?>
+
 
 <!DOCTYPE html>
 <html lang="en">
