@@ -13,8 +13,6 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-
-
                 <?php
                 $query = "SELECT * FROM  categories";
                 $select_all_category_query = mysqli_query($connection, $query);
@@ -33,23 +31,6 @@
                 <li>
                     <a href="contact"><?php echo strtoupper('Contact'); ?></a>
                 </li>
-
-                <?php
-                if (!isset($_SESSION['user_role'])){
-                    ?>
-                    <li>
-                        <a href="registration"><?php echo strtoupper('Registration'); ?></a>
-                    </li>
-                    <?php
-                }else{
-                    ?>
-                    <li>
-                        <a href="admin"><?php echo strtoupper('admin'); ?></a>
-                    </li>
-                <?php
-                }
-                ?>
-
                 <?php
                 if (!isset($_SESSION['user_role'])) {
                     if (isset($_GET['p_id'])) {
@@ -58,10 +39,26 @@
                     }
                 }
                 ?>
-
-
-
-
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <?php
+                if (!isset($_SESSION['user_role'])){
+                    ?>
+                    <li>
+                        <a href="registration"><?php echo ucfirst('Sign Up'); ?></a>
+                    </li>
+                    <li>
+                        <a href="login"><?php echo ucfirst('Sign in'); ?></a>
+                    </li>
+                    <?php
+                }else{
+                    ?>
+                    <li>
+                        <a href="admin"><?php echo strtoupper('admin'); ?></a>
+                    </li>
+                    <?php
+                }
+                ?>
             </ul>
         </div>
         <!-- /.navbar-collapse -->

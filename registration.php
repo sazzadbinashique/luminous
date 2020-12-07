@@ -5,9 +5,6 @@
 <!-- Navigation -->
 <?php  include "includes/navigation.php"; ?>
 
-
-
-
 <?php
 if (isset($_POST['submit'])) {
 
@@ -55,48 +52,52 @@ if (isset($_POST['submit'])) {
     $message = "";
 }
 
-
 ?>
 
 
 <!-- Page Content -->
 <div class="container">
-
-    <section id="login">
-
+    <section id="registraion" style="margin-top: 40px;">
         <div class="container">
             <div class="row">
-                <div class="col-xs-6 col-xs-offset-3">
-                    <div class="form-wrap">
-                        <div class="well">
-                            <h1 class="text-center">Register</h1>
-                            <form role="form" action="registration" method="post" id="login-form" autocomplete="off">
+                <div class="col-lg-6 col-lg-offset-3">
+                    <div class="panel panel-default">
+                        <div class="panel-heading text-center">
+                            Sign Up Form
+                        </div>
+                        <div class="panel-body">
+                            <form role="form" action="registration" method="post" id="login-form" autocomplete="off" class="form-horizontal">
 
                                 <?php echo $message; ?>
                                 <div class="form-group">
-                                    <label for="username" class="sr-only">username</label>
-                                    <input type="text" name="username" id="username" class="form-control" placeholder="Enter Desired Username">
+                                    <label for="username" class="col-xs-3 control-label">User Name</label>
+                                    <div class="col-xs-9">
+                                        <input type="text" name="username" id="username" class="form-control" placeholder="Enter Desired Username">
+                                    </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="user_email" class="sr-only">Email</label>
-                                    <input type="email" name="user_email" id="email" class="form-control" placeholder="somebody@example.com">
+                                    <label for="user_email" class="col-xs-3 control-label">Email</label>
+                                    <div class="col-xs-9">
+                                        <input type="email" name="user_email" id="email" class="form-control" placeholder="somebody@example.com">
+                                    </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="user_password" class="sr-only">Password</label>
-                                    <input type="password" name="user_password" id="key" class="form-control" placeholder="Password">
+                                    <label for="user_password" class="col-xs-3 control-label">Password</label>
+                                    <div class="col-xs-9">
+                                        <input type="password" name="user_password" id="key" class="form-control" placeholder="Password">
+                                    </div>
                                 </div>
-
-
-
-                                <input type="submit" name="submit" id="btn-login" class="btn btn-primary btn-lg btn-block" value="Register">
+                                <div class="form-group">
+                                    <div class="col-xs-offset-9 col-xs-3">
+                                        <input type="submit" name="submit" id="btn-login" class="btn btn-primary" value="Sign Up">
+                                    </div>
+                                </div>
                             </form>
-
                         </div>
                     </div>
                 </div> <!-- /.col-xs-12 -->
             </div> <!-- /.row -->
         </div> <!-- /.container -->
     </section>
-    <hr>
 
     <?php include "includes/footer.php";?>

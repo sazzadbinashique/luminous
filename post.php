@@ -59,7 +59,7 @@
                                 by <a href="author_post?author=<?php echo $post_author; ?>&p_id=<?php echo $post_id; ?>"><?php echo $post_author?></a>
                             </p>
                         </div>
-                        <div class="col-lg-4">
+                        <div class="col-lg-4" style="margin-top: 6px;">
                             <p class="flot-right"><span class="glyphicon glyphicon-time"></span> <?php echo $post_date?></p>
 
                         </div>

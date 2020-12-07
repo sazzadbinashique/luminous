@@ -1,9 +1,6 @@
 
 <div class="col-md-4">
 
-
-
-
     <!-- Blog Search Well -->
     <div class="well">
         <h3 class="text-center">Blog Search</h3>
@@ -24,9 +21,9 @@
     if (!isset($_SESSION['user_role'])){
     ?>
     <!-- Login -->
-    <div class="well">
+    <!--<div class="well">
         <h3 class="text-center">Login</h3>
-        <form action="includes/login.php" method="post">
+        <form action="login" method="post">
             <div class="form-group">
                 <input name="username" type="text" class="form-control" placeholder="Please Enter Your username.">
             </div>
@@ -39,16 +36,41 @@
             </span>
             </div>
 
-        </form> <!-- form -->
-        <!-- /.input-group -->
-    </div
+        </form>
+    </div-->
         <?php
         }
         ?>
 
+            <!--        blog popular post -->
+    <div class="well">
+        <?php
+        $query = "SELECT * FROM posts WHERE post_status='published' ORDER BY post_view_count DESC LIMIT 4;";
+        $select_category_sidebar = mysqli_query($connection, $query);
+        ?>
+        <h4 class="text-center">Popular Posts</h4>
+        <div class="row">
+            <div class="col-lg-12 recent-post">
+                <ul class="list-unstyled">
+                    <?php
+                    while ($row = mysqli_fetch_assoc($select_category_sidebar)) {
+                        $post_id = $row['post_id'];
+                        $post_title = strtoupper($row['post_title']);
+
+                        echo "<li><a href='post?p_id= $post_id'><span class='glyphicon glyphicon-chevron-right'></span> {$post_title}</a></li>";
+
+                    }
+                    ?>
+
+                </ul>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+    </div>
 
 
-            <!-- Blog Categories Well -->
+    <!-- Blog Categories Well -->
     <div class="well">
         <?php
         $query = "SELECT * FROM  categories";
