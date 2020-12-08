@@ -27,7 +27,7 @@ LUMINOUS is a simple blog based on PHP Language.
 #### Cridentials
 01. 
     username: `admin` 
-    Password: `123456`
+    Password: `1234567890`
 02. 
     username: `user` 
     Password: `123456`

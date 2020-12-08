@@ -63,7 +63,7 @@ if (isset($_POST['login'])) {
 		header("Location: admin");
 	}else{
 
-		header( "Location: ../");
+		header( "Location: login");
 	}
 
 }
