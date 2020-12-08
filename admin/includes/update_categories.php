@@ -26,7 +26,7 @@
         if (isset($_POST['update_category'])) {
 
             $cat_title = $_POST['cat_title'];
-            $query = "UPDATE category  SET cat_title = '{$cat_title}' WHERE cat_id = {$cat_id} ";
+            $query = "UPDATE categories  SET cat_title = '{$cat_title}' WHERE cat_id = {$cat_id} ";
 
             $update_query = mysqli_query($connection, $query);
 
@@ -35,7 +35,7 @@
                 die('QUERY FAILED' . mysqli_error($connection));
 
             }
-            header("Location: categories.php");
+            header("Location: categories");
         }
 
 

@@ -11,8 +11,22 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="assets/js/bootstrap.min.js"></script>
-    
 
+   <script>
+       /********************************
+        |********* Notification messages hide section*******|
+        *******************************/
+       $(document).ready( function() {
+
+           $('#message-alert').delay(4000).fadeOut('slow');
+       });
+
+       function deleteConfirm() {
+           confirm("Are you sure you want to delete");
+       }
+
+
+   </script>
 </body>
 
 

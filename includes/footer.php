@@ -67,6 +67,22 @@
 <!-- Bootstrap Core JavaScript -->
 <script src="assets/js/bootstrap.min.js"></script>
 
+<script>
+    /********************************
+     |********* Notification messages hide section*******|
+     *******************************/
+
+    $(document).ready( function() {
+
+        $('#message-alert').delay(4000).fadeOut('slow');
+    });
+
+
+
+
+
+</script>
+
 </body>
 
 </html>

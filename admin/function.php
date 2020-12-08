@@ -70,7 +70,7 @@ function insert_categories(){
                  
                  if ($cat_title == "" || empty($cat_title)) {
                     
-                        echo "This field should not be Empty";
+                        echo "<h3 class='alert alert-danger'>This field should not be Empty</h3>";
 
                     }else{
 
@@ -82,7 +82,7 @@ function insert_categories(){
                         if (!$create_categories) {
                             die('QUERY FAILED' . mysqli_error($connection));
                         }
-                         echo "<h4 class ='alert alert-success float-right' >Add categories Create Succesfully:" . " " . "<a href = 'categories.php' > View Categories</a></h4>";
+                         echo "<h4 id='message-alert' class ='alert alert-success float-right' >Add categories Create Succesfully:" . " " . "<a href = 'categories.php' > View Categories</a></h4>";
                     }   
 
                 }                       
@@ -108,8 +108,8 @@ function findAllCategories(){
 	echo "<td>{$cat_id}</td>";
 	echo "<td>{$cat_title}</td>";
 	echo "<td><a href='categories?edit={$cat_id}'>Edit</a> </td>";
-	echo "<td><a href='categories?delete={$cat_id}'>Delete</a> </td>";
-	echo "</tr>";    
+	echo "<td><a onclick=\"javascript: return confirm('Are you sure you want to delete'); \" href='categories?delete={$cat_id}' >Delete</a> </td>";
+	echo "</tr>";
 	}
 }
 
@@ -131,7 +131,7 @@ function deleteCategories(){
 				    die('QUERY FAILED' . mysqli_error($connection));
 				} 
 
-				header("Location: categories.php");
+				header("Location: categories");
 
 
 			}

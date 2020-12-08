@@ -49,7 +49,7 @@ if (isset($_POST['submit'])) {
 
     }else{
 
-        $message = "<h5 class='text-center alert alert-success'>Your Registration Failed, fill can not be empty !</h5>";
+        $message = "<h5 id='message-alert' class='text-center alert alert-danger'>Your Registration Failed, fill can not be empty !</h5>";
     }
 }else{
 

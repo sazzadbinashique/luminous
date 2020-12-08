@@ -141,8 +141,6 @@ if (isset($_POST['checkBoxArray'])) {
 
 
                         echo "<td>$post_id</td>";
-
-
                         if (!empty($post_user)) {
 
                             echo "<td>$post_user</td>";
@@ -165,10 +163,7 @@ if (isset($_POST['checkBoxArray'])) {
 
 
                         }
-                        echo "<td>$cat_title</td>";
-
-
-
+                        echo (!empty($cat_title)) ? "<td>$cat_title</td>" : "<td>Null</td>";
                         echo "<td>$post_content</td>";
                         echo "<td><img src='../images/{$post_image}' alt='Image' width =100 ></td>";
                         echo "<td>$post_tags</td>";

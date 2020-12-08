@@ -14,7 +14,7 @@
 
 <!--            <li><a href=""> Users Online: --><?php //echo user_online(); ?><!--</a></li>-->
             <li><a href=""> Users Online: <span class="usersonline btn-success" style="border-radius: 50%; padding: 1px 4px 1px 4px;"></span></a></li>
-            <li><a href="<?= BASE_URL; ?>"><?php echo strtoupper('view blog'); ?></a></li>
+            <li><a href="<?= BASE_URL; ?>" target="_blank"><?php echo strtoupper('view blog'); ?></a></li>
 
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> 

@@ -19,7 +19,6 @@
                         Welcome to Admin
                         <small>Author</small>
                     </h1>
-
                     <div class="col-xs-6">
                         <?php insert_categories() ?>
                         <form action="" method="post">
