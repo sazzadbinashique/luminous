@@ -22,8 +22,20 @@ LUMINOUS is a simple blog based on PHP Language.
 02. `cd luminous`
 03. `sudo chmod -R 777 /images/`
 04. `create database and import sql file`
-
-
+05. `copy Config directory form ignored `
+### Project Tree
+```Luminous-tree
+├── admin
+|   |-- assets
+|   |-- includes    
+├── assets   
+├── Config
+    ├── config.php
+├── images
+├── includes
+├── .htacces
+├── index.php
+```
 #### Cridentials
 01. 
     username: `admin` 
