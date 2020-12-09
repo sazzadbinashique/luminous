@@ -1,5 +1,6 @@
 <?php include "../Config/config.php"; ?>
 <?php include "../includes/db.php"; ?>
+<?php include "../includes/function.php"; ?>
 <?php include "function.php"; ?>
 <?php ob_start(); ?>
 <?php session_start();?>
@@ -9,6 +10,28 @@ if (!isset($_SESSION['user_role'])) {
     header("Location: ../");
  
 }else{
+
+    if (isset($_SESSION['user_id'])){
+        $info = getBrowserWithVersion();
+        date_default_timezone_set("Asia/Dhaka");
+
+        $user_id =(isset($_SESSION['user_id']))? $_SESSION['user_id'] : '0';
+        $date = date('Y-m-d');
+        $time = date("H:i:s");
+        $week_of_year = date("W", strtotime(date('Y-m-d')));
+        $ip = getUserIpAddr();
+        $path = $_SERVER['REQUEST_URI'];
+        $os = $info['platform'];
+        $browser = $info['browser'];
+        $ref = $info['ref'];
+
+        $query = "INSERT INTO activity_log (date,time, weak_of_year, user_id, ip, path, os, browser, ref) ";
+        $query.= "VALUES ('{$date}', '{$time}', '{$week_of_year}', '{$user_id}', '$ip', '{$path}', '{$os}', '{$browser}', '{$ref}')";
+        $user_activity_query = mysqli_query($connection, $query);
+        if (!$user_activity_query) {
+            throw new Exception('QUERY FAILED.' . mysqli_error($connection));
+        }
+    }
 
     //  if ($_SESSION['user_role'] !== 'admin') {
     //     header("Location: ../index.php");

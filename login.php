@@ -55,6 +55,7 @@ if (isset($_POST['login'])) {
 
     if(password_verify($password, $user_password)) {
 
+        $_SESSION['user_id'] = $user_id;
         $_SESSION['username'] = $user_username;
         $_SESSION['user_firstname'] = $user_firstname;
         $_SESSION['user_lastname'] = $user_lastname;

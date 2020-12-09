@@ -12,9 +12,9 @@ foreach ($db as $key => $value) {
 
 $connection =mysqli_connect(DB_HOST,DB_USER,DB_PASS,DB_NAME);
 
- // if ($connection) {
- // 	echo "We are connected";
- // }
+if (mysqli_connect_errno($connection)) {
+	throw new Exception('Failed to connect to MySQL.' . mysqli_connect_error());
+}
 
 
 
