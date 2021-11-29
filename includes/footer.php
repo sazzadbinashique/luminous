@@ -17,9 +17,9 @@
                     <div class="footer-widget">
                         <h3>Useful links</h3>
                         <ul>
-                            <li><a href="<?= HOME_URL;?>">Home</a></li>
-                            <li><a href="registration.php">Registration</a></li>
-                            <li><a href="<?= HOME_URL;?>">Login</a></li>
+                            <li><a href="<?= BASE_URL;?>">Home</a></li>
+                            <li><a href="<?= BASE_URL;?>registration">Registration</a></li>
+                            <li><a href="<?= BASE_URL;?>login">Login</a></li>
                         </ul>
                     </div>
                 </div>
@@ -27,10 +27,10 @@
                     <div class="footer-widget">
                         <h3>Quick links</h3>
                         <ul>
-                            <li><a href="portfolio">Laravel</a></li>
-                            <li><a href="products">JavaScript</a></li>
-                            <li><a href="team">PHP</a></li>
-                            <li><a href="contact">Contact Us</a></li>
+                            <li><a href="<?= BASE_URL;?>">Laravel</a></li>
+                            <li><a href="<?= BASE_URL;?>">JavaScript</a></li>
+                            <li><a href="<?= BASE_URL;?>">PHP</a></li>
+                            <li><a href="<?= BASE_URL;?>">Contact Us</a></li>
                         </ul>
                     </div>
                 </div>
